@@ -9,127 +9,170 @@ ISS_SEMANAL$Semana=as.Date(ISS_SEMANAL$Semana, "%Y-%m-%d")
 #ISAAC: De momento, no veo la manera de hacerlo más "eficiente".
 
 
-# ejemplo, Madrid
+Spain = ISS_SEMANAL %>% 
+  group_by(CCAA) %>% 
+  arrange(Semana) %>% 
+  mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales))
 
-Madrid = ISS_SEMANAL %>% filter(CCAA=="Madrid") %>% arrange(Semana) %>% mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales),Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos),FR=Fallecidos+Recuperados,FRA=cumsum(FR)) 
-RecuperadosB=c(Madrid$Recuperados[1:18],Madrid$Rec[1:(dim(Madrid)[1]-18)])
-for(i in 19:28){
- Madrid$Recuperados[i]=Madrid$Activos[i-2]-Madrid$Fallecidos[i-1]
- Madrid$ActivosSemanales[i]=Madrid$Casos[i]-Madrid$Fallecidos[i]-Madrid$Recuperados[i]
- Madrid$Activos[i]=Madrid$Activos[i-1]+Madrid$ActivosSemanales[i]
+Spain=as.data.frame(Spain)
+
+# Andalucia
+Andalucia = Spain %>% filter(CCAA=="Andalucia") %>% arrange(Semana) 
+for(i in 19:dim(Andalucia)[1]){
+  Andalucia$Recuperados[i]=Andalucia$Activos[i-2]-Andalucia$Fallecidos[i-1]
+  Andalucia$ActivosSemanales[i]=Andalucia$Casos[i]-Andalucia$Fallecidos[i]-Andalucia$Recuperados[i]
+  Andalucia$Activos[i]=max(Andalucia$Activos[i-1]+Andalucia$ActivosSemanales[i],0)
 }
-plot(Madrid$Activos,type="b",pch=19,lwd=2,col=2)
-
-Madrid = cbind(Madrid, RecuperadosB)
-Madrid = Madrid %>% select(-Rec)
-Madrid = Madrid %>% mutate(ISSSD=(Fallecidos+Recuperados)/Casos,RecuperadosAcumulados=cumsum(Recuperados),ISSSA=100*RecuperadosAcumulados/CasosAcumulados)
-Madrid = Madrid[-c(1:3),]
-
-ts.plot(Madrid$ISSSD)
-
-# ejemplo, Castilla y León
-CyL = ISS_SEMANAL %>% filter(CCAA=="Castilla y León") %>% arrange(Semana) %>% mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales),Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos),FR=Fallecidos+Recuperados,FRA=cumsum(FR)) 
-RecuperadosB=c(CyL$Recuperados[1:18],CyL$Rec[1:(dim(CyL)[1]-18)])
-for(i in 19:28){
-  CyL$Recuperados[i]=CyL$Activos[i-2]-CyL$Fallecidos[i-1]
-  CyL$ActivosSemanales[i]=CyL$Casos[i]-CyL$Fallecidos[i]-CyL$Recuperados[i]
-  CyL$Activos[i]=CyL$Activos[i-1]+CyL$ActivosSemanales[i]
-}
-plot(CyL$Activos,type="b",pch=19,lwd=2,col=6)
-
-
-CyL = ISS_SEMANAL %>% filter(CCAA=="Castilla y León") %>% arrange(Semana) %>% mutate(Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos))
-Recuperados=c(0,0,0,CyL$Rec[1:(dim(CyL)[1]-3)])
-CyL = cbind(CyL, Recuperados)
-CyL = CyL %>% select(-Rec)
-CyL = CyL %>% mutate(ISSSD=(Fallecidos+Recuperados)/Casos,RecuperadosAcumulados=cumsum(Recuperados),ISSSA=100*RecuperadosAcumulados/CasosAcumulados)
-CyL = CyL[-c(1:3),]
-
-ts.plot(CyL$ISSSA)
-
-#Pasi Vasco
-PV = ISS_SEMANAL %>% filter(CCAA=="País Vasco") %>% arrange(Semana) %>% mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales),Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos),FR=Fallecidos+Recuperados,FRA=cumsum(FR)) 
-for(i in 19:28){
-  PV$Recuperados[i]=PV$Activos[i-2]-PV$Fallecidos[i-1]
-  PV$ActivosSemanales[i]=PV$Casos[i]-PV$Fallecidos[i]-PV$Recuperados[i]
-  PV$Activos[i]=max(PV$Activos[i-1]+PV$ActivosSemanales[i],0)
-}
-plot(PV$Activos,type="b",pch=19,lwd=2,col=3)
-
-# ejemplo, Cantabria
-Cantabria = ISS_SEMANAL %>% filter(CCAA=="Cantabria") %>% arrange(Semana) %>% mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales),Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos),FR=Fallecidos+Recuperados,FRA=cumsum(FR)) 
-RecuperadosB=c(Cantabria$Recuperados[1:18],Cantabria$Rec[1:(dim(Cantabria)[1]-18)])
-for(i in 19:28){
-  Cantabria$Recuperados[i]=Cantabria$Activos[i-2]-Cantabria$Fallecidos[i-1]
-  Cantabria$ActivosSemanales[i]=Cantabria$Casos[i]-Cantabria$Fallecidos[i]-Cantabria$Recuperados[i]
-  Cantabria$Activos[i]=max(Cantabria$Activos[i-1]+Cantabria$ActivosSemanales[i],0)
-}
-plot(Cantabria$Activos,type="b",pch=19,lwd=2,col=9)
-
-# ejemplo, asturias
-Asturias = ISS_SEMANAL %>% filter(CCAA=="Asturias") %>% arrange(Semana) %>% mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales),Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos),FR=Fallecidos+Recuperados,FRA=cumsum(FR)) 
-RecuperadosB=c(Asturias$Recuperados[1:18],Asturias$Rec[1:(dim(Asturias)[1]-18)])
-for(i in 19:28){
-  Asturias$Recuperados[i]=Asturias$Activos[i-2]-Asturias$Fallecidos[i-1]
-  Asturias$ActivosSemanales[i]=Asturias$Casos[i]-Asturias$Fallecidos[i]-Asturias$Recuperados[i]
-  Asturias$Activos[i]=max(Asturias$Activos[i-1]+Asturias$ActivosSemanales[i],0)
-}
-plot(Asturias$Activos,type="b",pch=19,lwd=2,col=4)
-
-# C. Valenciana
-CVal = ISS_SEMANAL %>% filter(CCAA=="C. Valenciana") %>% arrange(Semana) %>% mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales),Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos),FR=Fallecidos+Recuperados,FRA=cumsum(FR)) 
-RecuperadosB=c(CVal$Recuperados[1:18],CVal$Rec[1:(dim(CVal)[1]-18)])
-for(i in 19:28){
-  CVal$Recuperados[i]=CVal$Activos[i-2]-CVal$Fallecidos[i-1]
-  CVal$ActivosSemanales[i]=CVal$Casos[i]-CVal$Fallecidos[i]-CVal$Recuperados[i]
-  CVal$Activos[i]=max(CVal$Activos[i-1]+CVal$ActivosSemanales[i],0)
-}
-plot(CVal$Activos,type="b",pch=19,lwd=2,col=3)
 
 # ejemplo, Aragón
-Aragon = ISS_SEMANAL %>% filter(CCAA=="Aragón") %>% arrange(Semana) %>% mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales),Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos),FR=Fallecidos+Recuperados,FRA=cumsum(FR)) 
-RecuperadosB=c(Aragon$Recuperados[1:18],Aragon$Rec[1:(dim(Aragon)[1]-18)])
-for(i in 19:28){
+Aragon = Spain %>% filter(CCAA=="Aragón") %>% arrange(Semana)
+for(i in 19:dim(Aragon)[1]){
   Aragon$Recuperados[i]=Aragon$Activos[i-2]-Aragon$Fallecidos[i-1]
   Aragon$ActivosSemanales[i]=Aragon$Casos[i]-Aragon$Fallecidos[i]-Aragon$Recuperados[i]
   Aragon$Activos[i]=max(Aragon$Activos[i-1]+Aragon$ActivosSemanales[i],0)
 }
-plot(Aragon$Activos,type="b",pch=19,lwd=2,col=2)
 
 
-
-Aragon = ISS_SEMANAL %>% filter(CCAA=="Aragón") %>% arrange(Semana) %>% mutate(Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos))
-Recuperados=c(0,0,0,Aragon$Rec[1:(dim(Aragon)[1]-3)])
-Aragon = cbind(Aragon, Recuperados)
-Aragon = Aragon %>% select(-Rec)
-Aragon = Aragon %>% mutate(ISSSD=(Fallecidos+Recuperados)/Casos,RecuperadosAcumulados=cumsum(Recuperados),ISSSA=100*RecuperadosAcumulados/CasosAcumulados)
-Aragon = Aragon[-c(1:3),]
-
-ts.plot(Aragon$ISSSA)
-
-
-# ejemplo, Cataluña
-
-
-Cat = ISS_SEMANAL %>% filter(CCAA=="Cataluña") %>% arrange(Semana) %>% mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales),Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos),FR=Fallecidos+Recuperados,FRA=cumsum(FR)) 
-
-for(i in 19:dim(Cat)[1]){
-  Cat$Recuperados[i]=Cat$Activos[i-2]-Cat$Fallecidos[i-1]
-  Cat$ActivosSemanales[i]=Cat$Casos[i]-Cat$Fallecidos[i]-Cat$Recuperados[i]
-  Cat$Activos[i]=Cat$Activos[i-1]+Cat$ActivosSemanales[i]
+# Asturias
+Asturias = Spain %>% filter(CCAA=="Asturias") %>% arrange(Semana)
+for(i in 19:dim(Asturias)[1]){
+  Asturias$Recuperados[i]=Asturias$Activos[i-2]-Asturias$Fallecidos[i-1]
+  Asturias$ActivosSemanales[i]=Asturias$Casos[i]-Asturias$Fallecidos[i]-Asturias$Recuperados[i]
+  Asturias$Activos[i]=max(Asturias$Activos[i-1]+Asturias$ActivosSemanales[i],0)
 }
-plot(Cat$Activos,type="b",pch=19,lwd=2,col=4)
+
+# Baleares
+Baleares = Spain %>% filter(CCAA=="Baleares") %>% arrange(Semana)
+for(i in 19:dim(Baleares)[1]){
+  Baleares$Recuperados[i]=Baleares$Activos[i-2]-Baleares$Fallecidos[i-1]
+  Baleares$ActivosSemanales[i]=Baleares$Casos[i]-Baleares$Fallecidos[i]-Baleares$Recuperados[i]
+  Baleares$Activos[i]=max(Baleares$Activos[i-1]+Baleares$ActivosSemanales[i],0)
+}
+
+# C. Valenciana
+CValenciana = Spain %>% filter(CCAA=="C. Valenciana") %>% arrange(Semana)
+for(i in 19:dim(Baleares)[1]){
+  CValenciana$Recuperados[i]=CValenciana$Activos[i-2]-CValenciana$Fallecidos[i-1]
+  CValenciana$ActivosSemanales[i]=CValenciana$Casos[i]-CValenciana$Fallecidos[i]-CValenciana$Recuperados[i]
+  CValenciana$Activos[i]=max(CValenciana$Activos[i-1]+CValenciana$ActivosSemanales[i],0)
+}
+
+# Canarias
+Canarias = Spain %>% filter(CCAA=="Canarias") %>% arrange(Semana)
+for(i in 19:dim(Canarias)[1]){
+  Canarias$Recuperados[i]=Canarias$Activos[i-2]-Canarias$Fallecidos[i-1]
+  Canarias$ActivosSemanales[i]=Canarias$Casos[i]-Canarias$Fallecidos[i]-Canarias$Recuperados[i]
+  Canarias$Activos[i]=max(Canarias$Activos[i-1]+Canarias$ActivosSemanales[i],0)
+}
+
+# Cantabria
+Cantabria = Spain %>% filter(CCAA=="Cantabria") %>% arrange(Semana)
+for(i in 19:dim(Cantabria)[1]){
+  Cantabria$Recuperados[i]=Cantabria$Activos[i-2]-Cantabria$Fallecidos[i-1]
+  Cantabria$ActivosSemanales[i]=Cantabria$Casos[i]-Cantabria$Fallecidos[i]-Cantabria$Recuperados[i]
+  Cantabria$Activos[i]=max(Cantabria$Activos[i-1]+Cantabria$ActivosSemanales[i],0)
+}
+
+# CLM
+CLM = Spain %>% filter(CCAA=="Castilla La Mancha") %>% arrange(Semana)
+for(i in 19:dim(CLM)[1]){
+  CLM$Recuperados[i]=CLM$Activos[i-2]-CLM$Fallecidos[i-1]
+  CLM$ActivosSemanales[i]=CLM$Casos[i]-CLM$Fallecidos[i]-CLM$Recuperados[i]
+  CLM$Activos[i]=max(CLM$Activos[i-1]+CLM$ActivosSemanales[i],0)
+}
+
+# CyL
+CyL = Spain %>% filter(CCAA=="Castilla y León") %>% arrange(Semana)
+for(i in 19:dim(CyL)[1]){
+  CyL$Recuperados[i]=CyL$Activos[i-2]-CyL$Fallecidos[i-1]
+  CyL$ActivosSemanales[i]=CyL$Casos[i]-CyL$Fallecidos[i]-CyL$Recuperados[i]
+  CyL$Activos[i]=max(CyL$Activos[i-1]+CyL$ActivosSemanales[i],0)
+}
 
 
+# Cataluna
+Cataluña = Spain %>% filter(CCAA=="Cataluña") %>% arrange(Semana)
+for(i in 19:dim(Cataluña)[1]){
+  Cataluña$Recuperados[i]=Cataluña$Activos[i-2]-Cataluña$Fallecidos[i-1]
+  Cataluña$ActivosSemanales[i]=Cataluña$Casos[i]-Cataluña$Fallecidos[i]-Cataluña$Recuperados[i]
+  Cataluña$Activos[i]=max(Cataluña$Activos[i-1]+Cataluña$ActivosSemanales[i],0)
+}
 
-Cat = ISS_SEMANAL %>% filter(CCAA=="Cataluña") %>% arrange(Semana) %>% mutate(Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos))
-Recuperados=c(0,0,0,Cat$Rec[1:(dim(Cat)[1]-3)])
-Cat = cbind(Cat, Recuperados)
-Cat = Cat %>% select(-Rec)
-Cat = Cat %>% mutate(ISSSD=(Fallecidos+Recuperados)/Casos,RecuperadosAcumulados=cumsum(Recuperados),ISSSA=100*RecuperadosAcumulados/CasosAcumulados)
-Cat = Cat[-c(1:3),]
+# Ceuta
+Ceuta = Spain %>% filter(CCAA=="Ceuta") %>% arrange(Semana)
+for(i in 19:dim(Cataluña)[1]){
+  Ceuta$Recuperados[i]=Ceuta$Activos[i-2]-Ceuta$Fallecidos[i-1]
+  Ceuta$ActivosSemanales[i]=Ceuta$Casos[i]-Ceuta$Fallecidos[i]-Ceuta$Recuperados[i]
+  Ceuta$Activos[i]=max(Ceuta$Activos[i-1]+Ceuta$ActivosSemanales[i],0)
+}
 
-ts.plot(Cat$ISSSD)
+
+# Extremadura
+Extremadura = Spain %>% filter(CCAA=="Extremadura") %>% arrange(Semana)
+for(i in 19:dim(Cataluña)[1]){
+  Extremadura$Recuperados[i]=Extremadura$Activos[i-2]-Extremadura$Fallecidos[i-1]
+  Extremadura$ActivosSemanales[i]=Extremadura$Casos[i]-Extremadura$Fallecidos[i]-Extremadura$Recuperados[i]
+  Extremadura$Activos[i]=max(Extremadura$Activos[i-1]+Extremadura$ActivosSemanales[i],0)
+}
+
+# Galicia
+Galicia = Spain %>% filter(CCAA=="Galicia") %>% arrange(Semana)
+for(i in 19:dim(Cataluña)[1]){
+  Galicia$Recuperados[i]=Galicia$Activos[i-2]-Galicia$Fallecidos[i-1]
+  Galicia$ActivosSemanales[i]=Galicia$Casos[i]-Galicia$Fallecidos[i]-Galicia$Recuperados[i]
+  Galicia$Activos[i]=max(Galicia$Activos[i-1]+Galicia$ActivosSemanales[i],0)
+}
+
+
+# La Rioja
+LR = Spain %>% filter(CCAA=="La Rioja") %>% arrange(Semana)
+for(i in 19:dim(Cataluña)[1]){
+  LR$Recuperados[i]=LR$Activos[i-2]-LR$Fallecidos[i-1]
+  LR$ActivosSemanales[i]=LR$Casos[i]-LR$Fallecidos[i]-LR$Recuperados[i]
+  LR$Activos[i]=max(LR$Activos[i-1]+LR$ActivosSemanales[i],0)
+}
+
+# Madrid
+Madrid = Spain %>% filter(CCAA=="Madrid") %>% arrange(Semana)
+for(i in 19:dim(Cataluña)[1]){
+  Madrid$Recuperados[i]=Madrid$Activos[i-2]-Madrid$Fallecidos[i-1]
+  Madrid$ActivosSemanales[i]=Madrid$Casos[i]-Madrid$Fallecidos[i]-Madrid$Recuperados[i]
+  Madrid$Activos[i]=max(Madrid$Activos[i-1]+Madrid$ActivosSemanales[i],0)
+}
+
+# Melilla
+Melilla = Spain %>% filter(CCAA=="Melilla") %>% arrange(Semana)
+for(i in 19:dim(Melilla)[1]){
+  Melilla$Recuperados[i]=Melilla$Activos[i-2]-Melilla$Fallecidos[i-1]
+  Melilla$ActivosSemanales[i]=Melilla$Casos[i]-Melilla$Fallecidos[i]-Melilla$Recuperados[i]
+  Melilla$Activos[i]=max(Melilla$Activos[i-1]+Melilla$ActivosSemanales[i],0)
+}
+
+# Murcia
+Murcia = Spain %>% filter(CCAA=="Murcia") %>% arrange(Semana)
+for(i in 19:dim(Melilla)[1]){
+  Murcia$Recuperados[i]=Murcia$Activos[i-2]-Murcia$Fallecidos[i-1]
+  Murcia$ActivosSemanales[i]=Murcia$Casos[i]-Murcia$Fallecidos[i]-Murcia$Recuperados[i]
+  Murcia$Activos[i]=max(Murcia$Activos[i-1]+Murcia$ActivosSemanales[i],0)
+}
+
+
+# Navarra
+Navarra = Spain %>% filter(CCAA=="Navarra") %>% arrange(Semana)
+for(i in 19:dim(Melilla)[1]){
+  Navarra$Recuperados[i]=Navarra$Activos[i-2]-Navarra$Fallecidos[i-1]
+  Navarra$ActivosSemanales[i]=Navarra$Casos[i]-Navarra$Fallecidos[i]-Navarra$Recuperados[i]
+  Navarra$Activos[i]=max(Navarra$Activos[i-1]+Navarra$ActivosSemanales[i],0)
+}
+
+# País Vasco
+PV = Spain %>% filter(CCAA=="País Vasco") %>% arrange(Semana)
+for(i in 19:dim(PV)[1]){
+  PV$Recuperados[i]=PV$Activos[i-2]-PV$Fallecidos[i-1]
+  PV$ActivosSemanales[i]=PV$Casos[i]-PV$Fallecidos[i]-PV$Recuperados[i]
+  PV$Activos[i]=max(PV$Activos[i-1]+PV$ActivosSemanales[i],0)
+}
+
 
 # ejemplo, Extremadura
 
