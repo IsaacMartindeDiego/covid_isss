@@ -152,7 +152,7 @@ for(i in 19:dim(Melilla)[1]){
 # País Vasco
 PV = Spain %>% filter(CCAA=="País Vasco") %>% arrange(Semana)
 for(i in 19:dim(PV)[1]){
-  PV$Recuperados[i]=PV$Activos[i-2]-PV$Fallecidos[i-1]
+  PV$Recuperados[i]=max(PV$Activos[i-2]-PV$Fallecidos[i-1],0)
   PV$ActivosSemanales[i]=PV$Casos[i]-PV$Fallecidos[i]-PV$Recuperados[i]
   PV$Activos[i]=max(PV$Activos[i-1]+PV$ActivosSemanales[i],0)
 }
@@ -169,12 +169,12 @@ Ext = Ext[-c(1:3),]
 
 ts.plot(Ext$ISSSA)
 
-#
-Spain = ISS_SEMANAL %>% 
-          group_by(CCAA) %>% 
-          arrange(Semana) %>% 
-          mutate(Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos)) %>%
-          mutate(Recuperados=lag(Rec,4))
-
 
 #Discutir qué es Recuperados!?!?!
+
+#Calculo de ISSSD e ISSSA
+Spain=rbind(Madrid,Cataluña,Andalucia,Aragon,Asturias,PV,CValenciana,Murcia,Extremadura,Galicia,CyL,CLM,LR,Navarra,Cantabria,Ceuta,Melilla)
+
+Spain=Spain%>%mutate(ISSSD=(Fallecidos+Recuperados)/Casos)
+
+Spain=Spain%>%group_by(CCAA)%>%arrange(Semana)%>%mutate(RecuperadosAcumulados=cumsum(Recuperados),CasosAcumulados=cumsum(Casos),ISSSA=100*RecuperadosAcumulados/CasosAcumulados)
