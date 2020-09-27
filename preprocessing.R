@@ -158,16 +158,7 @@ for(i in 19:dim(PV)[1]){
 }
 
 
-# ejemplo, Extremadura
 
-Ext = ISS_SEMANAL %>% filter(CCAA=="Extremadura") %>% arrange(Semana) %>% mutate(Rec=Casos-Fallecidos,CasosAcumulados=cumsum(Casos))
-Recuperados=c(0,0,0,Ext$Rec[1:(dim(Ext)[1]-3)])
-Ext = cbind(Ext, Recuperados)
-Ext = Ext %>% select(-Rec)
-Ext = Ext %>% mutate(ISSSD=(Fallecidos+Recuperados)/Casos,RecuperadosAcumulados=cumsum(Recuperados),ISSSA=100*RecuperadosAcumulados/CasosAcumulados)
-Ext = Ext[-c(1:3),]
-
-ts.plot(Ext$ISSSA)
 
 
 #Discutir qué es Recuperados!?!?!

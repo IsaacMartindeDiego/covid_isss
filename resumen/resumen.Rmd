@@ -1,0 +1,103 @@
+---
+title: "Informe del `r format(Sys.Date(), '%d de %B de %Y')`"
+mainfont: Roboto Light
+header-includes:
+- \usepackage[font=small,skip=8pt]{caption}
+- \usepackage{float}
+- \floatplacement{figure}{H}
+output:
+  pdf_document:
+    includes:
+      in_header: header.tex
+      fig_caption: yes
+  html_document:
+    df_print: paged
+fontsize: 11pt
+always_allow_html: true
+---
+```{r setup, cache=FALSE, include=FALSE}
+library(knitr)
+library(ggplot2)
+library(gridExtra)
+library(plotly)
+library(knitr)
+library(kableExtra)
+
+output <- opts_knit$get("rmarkdown.pandoc.to")
+#if (output=="latex") opts_chunk$set(tidy=TRUE,tidy.opts=list(blank=FALSE, width.cutoff=30),
+                                 #   fig.width = 6,fig.height = 2)
+knitr::opts_chunk$set(fig.pos = "!H")
+
+
+```
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+
+\vspace{-0.5cm}
+
+## Resumen ejecutivo
+
+## Indicador de Suficiencia Sanitaria
+
+El **Indicador de Suficiencia Sanitaria (ISS)** mide la capacidad que tiene un sistema de salud para dar respuesta a las necesidades derivadas de un creciente número de contagios en un escenario de pandemia como es la del COVID-19. Valores altos del ISS indicarán que el sistema sanitario tiene la capacidad de absorber el flujo de diagnósticos confirmados de coronavirus al objeto de que puedan ser tratados según los protocolos establecidos. Valores bajos del ISS se corresponden con posibles insuficiencias del sistema sanitario que pueden afectar a la gestión del flujo de casos diagnosticados. Se define un día positivo como aquel en el que el ISS diario toma un valor por encima de 1.
+
+\vspace{0.2cm}
+```{r fig_iss, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss} ISS semanal y acumulado en España"}
+grid.arrange(figura_ISSSD_españa,figura_ISSSA_españa, ncol=2, nrow =1)
+
+```
+
+
+\clearpage
+
+## Comparativa por Comunidades Autónomas
+Estos gráficos representan la evolución del ISS acumulado y diario en las Comunidades Autónomas españolas más afectadas por la pandemia. 
+
+\vspace{0.2cm}
+
+```{r fig17a_res,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas ",fig.width = 16,fig.height = 18,warning=FALSE}
+figura_ISSSA_ccaa
+
+```
+
+
+```{r figura_ISSSD_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_ISSSD_ccaa} ISS semanal por Comunidades Autónomas",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
+figura_ISSSD_ccaa
+```
+
+
+\clearpage
+
+## Activos
+Estos gráficos muestran los diagnosticados que permanecen activos cada semana en España y en las CCAA. Se considera que la pandemia ha superado su pico máximo cuando el número de activos semanales comienza a descender de manera continuada.
+
+\vspace{0.2cm}
+
+```{r fig1,echo=FALSE,fig.cap="\\label{fig:fig17a_res} Activos en España desde el inicio de la pandemia",warning=FALSE}
+figura_activos_españa
+
+```
+
+
+```{r figura_activos_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_activos_ccaa} Activos por Comunidades Autónomas",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
+figura_activos_ccaa
+```
+
+
+
+
+\begin{center}
+\includegraphics{cc.png}
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{center}
+Esta obra está bajo una licencia de Creative Commons 
+\end{center}
+
+\begin{center}
+Reconocimiento-CompartirIgual 4.0 Internacional.
+\end{center}
+
+

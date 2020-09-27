@@ -65,11 +65,11 @@ ISSSA_españa=ISSSA_españa%>%mutate(RecuperadosA=cumsum(Rec),CasosA=cumsum(Cas)
 gg1=ggplot(ISSSA_españa)+geom_line(aes(x=Semana,y=ISSSA,color='red'),lwd=1.25)
 figura_ISSSA_españa=gg1+theme_minimal()+theme(legend.position = "none")+ 
   theme(axis.title.x=element_blank(),axis.title.y=element_blank(),plot.title = element_text(hjust = 0.5))+
-  ggtitle("España")+scale_x_date(date_breaks = "months" , date_labels = "%b")
+  ggtitle("ISS acumulado")+scale_x_date(date_breaks = "months" , date_labels = "%b")
 
 #ISSSD España
 # Figura correspondiente a ISS semanal 
 gg1=ggplot(ISSSA_españa)+geom_line(aes(x=Semana,y=ISSSD,color='red'),lwd=1.25)+scale_y_continuous(trans='log10')
 figura_ISSSD_españa=gg1+theme_minimal()+theme(legend.position = "none")+ 
   theme(axis.title.x=element_blank(),axis.title.y=element_blank(),plot.title = element_text(hjust = 0.5))+
-  ggtitle("España")+scale_x_date(date_breaks = "months" , date_labels = "%b")+geom_hline(yintercept=1)
+  ggtitle("ISS semanal")+scale_x_date(date_breaks = "months" , date_labels = "%b")+geom_hline(yintercept=1)

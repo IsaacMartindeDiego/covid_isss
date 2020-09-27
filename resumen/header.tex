@@ -1,0 +1,43 @@
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+
+
+\topmargin=-0.45in
+\evensidemargin=-1in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1}
+ \pagestyle{fancy}
+ \fancyhead[LO,LE]{\thetitle}
+ \fancyhead[RO,RE]{\includegraphics[width=0.5cm]{./DSLab_logo_2.png}}
+ \fancyfoot[LO,LE]{DSLab, methaodos.org, Academia Joven de España \thedate}
+ \cfoot{}
+ \fancyfoot[RE,RO]{Página\ \thepage\ de\ \protect\pageref{LastPage}}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \vspace{-2.5cm}
+  \includegraphics[width=3.2cm]{./methaodos.png}
+  \hspace{3cm}
+  \includegraphics[width=3.5cm]{./dslab.png}
+  \hspace{3cm}
+  \includegraphics[width=3cm]{./aje.png}\\ 
+\vspace{1cm}
+\textbf{Suficiencia Sanitaria y COVID-19}\\
+}
+\posttitle{\end{center}}
+
+
+
+
+
