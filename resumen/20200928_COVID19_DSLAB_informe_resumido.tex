@@ -1,0 +1,209 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Roboto Light}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Informe del 28 de septiembre de 2020},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+
+
+\topmargin=-0.45in
+\evensidemargin=-1in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1}
+ \pagestyle{fancy}
+ \fancyhead[LO,LE]{\thetitle}
+ \fancyhead[RO,RE]{\includegraphics[width=0.5cm]{./DSLab_logo_2.png}}
+ \fancyfoot[LO,LE]{DSLab, methaodos.org, Academia Joven de España \thedate}
+ \cfoot{}
+ \fancyfoot[RE,RO]{Página\ \thepage\ de\ \protect\pageref{LastPage}}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \vspace{-2.5cm}
+  \includegraphics[width=3.2cm]{./methaodos.png}
+  \hspace{3cm}
+  \includegraphics[width=3.5cm]{./dslab.png}
+  \hspace{3cm}
+  \includegraphics[width=3cm]{./aje.png}\\ 
+\vspace{1cm}
+\textbf{Suficiencia Sanitaria y COVID-19}\\
+}
+\posttitle{\end{center}}
+\usepackage[font=small,skip=8pt]{caption}
+\usepackage{float}
+\floatplacement{figure}{H}
+
+\title{Informe del 28 de septiembre de 2020}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+
+\vspace{-0.5cm}
+
+\hypertarget{resumen-ejecutivo}{%
+\subsection{Resumen ejecutivo}\label{resumen-ejecutivo}}
+
+\hypertarget{indicador-de-suficiencia-sanitaria}{%
+\subsection{Indicador de Suficiencia
+Sanitaria}\label{indicador-de-suficiencia-sanitaria}}
+
+El \textbf{Indicador de Suficiencia Sanitaria (ISS)} mide la capacidad
+que tiene un sistema de salud para dar respuesta a las necesidades
+derivadas de un creciente número de contagios en un escenario de
+pandemia como es la del COVID-19. Valores altos del ISS indicarán que el
+sistema sanitario tiene la capacidad de absorber el flujo de
+diagnósticos confirmados de coronavirus al objeto de que puedan ser
+tratados según los protocolos establecidos. Valores bajos del ISS se
+corresponden con posibles insuficiencias del sistema sanitario que
+pueden afectar a la gestión del flujo de casos diagnosticados. Se define
+un día positivo como aquel en el que el ISS diario toma un valor por
+encima de 1.
+
+\vspace{0.2cm}
+
+\begin{figure}
+\centering
+\includegraphics{20200928_COVID19_DSLAB_informe_resumido_files/figure-latex/fig_iss-1.pdf}
+\caption{\label{fig:fig_iss} ISS semanal y acumulado en España}
+\end{figure}
+
+\clearpage
+
+\hypertarget{comparativa-por-comunidades-autuxf3nomas}{%
+\subsection{Comparativa por Comunidades
+Autónomas}\label{comparativa-por-comunidades-autuxf3nomas}}
+
+Estos gráficos representan la evolución del ISS acumulado y diario en
+las Comunidades Autónomas españolas más afectadas por la pandemia.
+
+\vspace{0.2cm}
+
+\begin{figure}
+\centering
+\includegraphics{20200928_COVID19_DSLAB_informe_resumido_files/figure-latex/figura_ISSSD_ccaa-1.pdf}
+\caption{\label{fig:figura_ISSSD_ccaa} ISS semanal por Comunidades
+Autónomas}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{20200928_COVID19_DSLAB_informe_resumido_files/figure-latex/fig17a_res-1.pdf}
+\caption{\label{fig:fig17a_res} ISS acumulado en las Comunidades
+Autónomas}
+\end{figure}
+
+\clearpage
+
+\hypertarget{activos}{%
+\subsection{Activos}\label{activos}}
+
+Estos gráficos muestran los diagnosticados que permanecen activos cada
+semana en España y en las CCAA. Se considera que la pandemia ha superado
+su pico máximo cuando el número de activos semanales comienza a
+descender de manera continuada.
+
+\vspace{0.2cm}
+
+\begin{figure}
+\centering
+\includegraphics{20200928_COVID19_DSLAB_informe_resumido_files/figure-latex/fig1-1.pdf}
+\caption{\label{fig:fig17a_res} Activos en España desde el inicio de la
+pandemia}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{20200928_COVID19_DSLAB_informe_resumido_files/figure-latex/figura_activos_ccaa-1.pdf}
+\caption{\label{fig:figura_activos_ccaa} Activos por Comunidades
+Autónomas}
+\end{figure}
+
+\begin{center}
+\includegraphics{cc.png}
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{center}
+Esta obra está bajo una licencia de Creative Commons 
+\end{center}
+
+\begin{center}
+Reconocimiento-CompartirIgual 4.0 Internacional.
+\end{center}
+
+\end{document}

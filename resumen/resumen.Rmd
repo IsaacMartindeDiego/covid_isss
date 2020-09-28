@@ -54,6 +54,10 @@ grid.arrange(figura_ISSSD_españa,figura_ISSSA_españa, ncol=2, nrow =1)
 Estos gráficos representan la evolución del ISS acumulado y diario en las Comunidades Autónomas españolas más afectadas por la pandemia. 
 
 \vspace{0.2cm}
+```{r figura_ISSSD_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_ISSSD_ccaa} ISS semanal por Comunidades Autónomas",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
+figura_ISSSD_ccaa
+```
+
 
 ```{r fig17a_res,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas ",fig.width = 16,fig.height = 18,warning=FALSE}
 figura_ISSSA_ccaa
@@ -61,9 +65,6 @@ figura_ISSSA_ccaa
 ```
 
 
-```{r figura_ISSSD_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_ISSSD_ccaa} ISS semanal por Comunidades Autónomas",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
-figura_ISSSD_ccaa
-```
 
 
 \clearpage

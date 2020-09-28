@@ -160,12 +160,14 @@ for(i in 19:dim(PV)[1]){
 
 
 
-
-#Discutir qué es Recuperados!?!?!
-
 #Calculo de ISSSD e ISSSA
 Spain=rbind(Madrid,Cataluña,Andalucia,Aragon,Asturias,PV,CValenciana,Murcia,Extremadura,Galicia,CyL,CLM,LR,Navarra,Cantabria,Ceuta,Melilla)
 
 Spain=Spain%>%mutate(ISSSD=(Fallecidos+Recuperados)/Casos)
 
-Spain=Spain%>%group_by(CCAA)%>%arrange(Semana)%>%mutate(RecuperadosAcumulados=cumsum(Recuperados),CasosAcumulados=cumsum(Casos),ISSSA=100*RecuperadosAcumulados/CasosAcumulados)
+# If Casos >0 & Fallecidos + Recuperados =0 ISSSD=1/(Casos+1)
+# If Casos =0 & Fallecidos + Recuperados >0 ISSSD=(Fallecidos+Recuperados+1)
+# If 0/0 ISSSD=1``
+
+
+Spain=Spain%>%group_by(CCAA)%>%arrange(Semana)%>%mutate(ResueltosAcumulados=cumsum(Recuperados)+cumsum(Fallecidos),CasosAcumulados=cumsum(Casos),ISSSA=100*ResueltosAcumulados/CasosAcumulados)
