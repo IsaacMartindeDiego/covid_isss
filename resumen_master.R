@@ -9,3 +9,4 @@ nombre_informe = "_COVID19_DSLAB_informe_resumido"
 nombre_total = paste0(fecha_informe,nombre_informe,sep="")
 
 rmarkdown::render('resumen/resumen.Rmd',output_file = paste(nombre_total,'.pdf', sep='')) 
+

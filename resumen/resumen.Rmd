@@ -42,27 +42,39 @@ knitr::opts_chunk$set(fig.pos = "!H")
 El **Indicador de Suficiencia Sanitaria (ISS)** mide la capacidad que tiene un sistema de salud para dar respuesta a las necesidades derivadas de un creciente número de contagios en un escenario de pandemia como es la del COVID-19. Valores altos del ISS indicarán que el sistema sanitario tiene la capacidad de absorber el flujo de diagnósticos confirmados de coronavirus al objeto de que puedan ser tratados según los protocolos establecidos. Valores bajos del ISS se corresponden con posibles insuficiencias del sistema sanitario que pueden afectar a la gestión del flujo de casos diagnosticados. Se define un día positivo como aquel en el que el ISS diario toma un valor por encima de 1.
 
 \vspace{0.2cm}
-```{r fig_iss, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss} ISS semanal y acumulado en España"}
-grid.arrange(figura_ISSSD_españa,figura_ISSSA_españa, ncol=2, nrow =1)
+```{r fig_iss, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss} ISS acumulado y semanal."}
+grid.arrange(figura_ISSSA_españa,figura_ISSSD_españa,ncol=2, nrow =1)
 
+```
+
+## Segunda Ola
+```{r fig_iss2, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss2} ISS acumulado segunda ola.",warning=FALSE}
+figura_ISSSA_españa2
 ```
 
 
 \clearpage
-
 ## Comparativa por Comunidades Autónomas
 Estos gráficos representan la evolución del ISS acumulado y diario en las Comunidades Autónomas españolas más afectadas por la pandemia. 
 
 \vspace{0.2cm}
-```{r figura_ISSSD_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_ISSSD_ccaa} ISS semanal por Comunidades Autónomas",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
-figura_ISSSD_ccaa
-```
-
-
 ```{r fig17a_res,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas ",fig.width = 16,fig.height = 18,warning=FALSE}
 figura_ISSSA_ccaa
 
 ```
+
+```{r figura_ISSSD_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_ISSSD_ccaa} ISS semanal por Comunidades Autónomas",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
+figura_ISSSD_ccaa
+```
+
+\vspace{0.2cm}
+```{r fig17a_res2,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas. Segunda ola. ",fig.width = 16,fig.height = 18,warning=FALSE}
+figura_ISSSA_ccaa2
+
+```
+
+
+
 
 
 
