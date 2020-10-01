@@ -33,3 +33,5 @@ names(tabla_ccaa_informe)=c("Comunidad Autónoma", "ISSa (%) 2ª ola", "ISSs 2ª
 tabla_ccaa_informe$`ISSa (%) 2ª ola`[tabla_ccaa_informe$`ISSa (%) 2ª ola`>95]="> 95"
 tabla_ccaa_informe$`ISSa (%) pandemia`[tabla_ccaa_informe$`ISSa (%) pandemia`>95]="> 95"
 
+tabla_ccaa_informe_issa=tabla_ccaa_informe[,c(1,2,4)]
+tabla_ccaa_informe_isss=tabla_ccaa_informe[,c(1,3,5)]

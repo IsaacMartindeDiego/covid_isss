@@ -51,6 +51,13 @@ Del ISSa se presentan dos estimaciones:
     
 También se calcula el ISSa para cada comunidad autónoma. Se puede comprobar en la figura 2 que el ISSa de la segunda ola es creciente en la mayor parte de las comunidades autónomas. Los valores más altos del ISSa se alcanzan en Islas Baleares y Canarias (superior al 95%). Comunidad Valenciana, Cataluña, Galicia y País Vasco están cerca de alcanzar ese valor. Por tanto, todas estas comunidades están cerca de alcanzar valores de control de la segunda ola. Los valores más bajos del ISSa en la segunda ola se dan en Asturias (ISSa = 66.13) y Extremadura (ISSa = 69.4). 
 
+
+```{r tabla, echo=FALSE, results= 'asis', warning=FALSE}
+kable(tabla_ccaa_informe_issa,row.names = F,caption = "ISS acumulado por CCAA, segunda ola y pandemia.",format="latex")%>%
+ kable_styling(font_size = 9,latex_options = "hold_position")
+```
+
+
 ```{r fig_iss3, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss3} ISS acumulado, segunda ola y pandemia.",warning=FALSE}
 grid.arrange(figura_ISSSA_españa2,figura_ISSSA_españa,ncol=2, nrow =1)
 ```
@@ -61,48 +68,37 @@ figura_ISSSA_ccaa2
 
 ```
 
-\clearpage
-
-## Indicador de Suficiencia Sanitaria semanal (ISSs)
-
-El ISSs es un indicador que toma valores positivos, siendo clave superar un valor de 1 para garantizar la suficiencia del sistema. Sucesivos valores diarios por debajo de 1 implican posibles saturaciones del sistema sanitario, mientras que si el indicador se sitúa por encima de 1 evidencia mejores niveles de suficiencia. Para que el sistema sanitario esté en condiciones de estabilizarse es necesario que el ISSa mantenga una tendencia creciente y que el ISSd se sitúe de manera sostenida por encima de 1. **Desde una perspectiva nacional, el ISSd de la segunda ola ha superado esta semana el valor de 1 (ISSs = 1.01), también con una tendencia creciente en las últimas semanas.** Por comunidades autónomas, en todas ellas presenta un comportamiento similar. Una vez este indicador se estabilice por encima de 1, el número de casos resueltos semanalmente superará al de casos diagnosticados. **El actual valor de este indicador en torno a 1 indica que probablemente nos encontramos en un punto de inflexión en el devenir de la segunda ola, comenzando a partir de ahora una mejora previsible de la situación de suficiencia sanitaria del país, tanto a nivel nacional como por comunidades autónomas.**
-
-```{r fig_iss2, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss2} ISS semanal, segunda ola y pandemia.",warning=FALSE}
-grid.arrange(figura_ISSSD_españa2,figura_ISSSD_españa,ncol=2, nrow =1)
-```
-
-\clearpage
-## Comparativa por Comunidades Autónomas
-La siguiente tabla muestra los valores de ISS acumulado e ISS semanal para las Comunidades Autónomas españolas.
-\vspace{0.2cm}
-
-
-```{r tabla, echo=FALSE, results= 'asis', warning=FALSE}
-kable(tabla_ccaa_informe,row.names = F,caption = "ISS acumulado e ISS semanal por CCAA, segunda ola y pandemia.",format="latex")%>%
- kable_styling(font_size = 9,latex_options = "hold_position")
-
-```
-
-
-Estos gráficos representan la evolución del ISS acumulado y semanal en las Comunidades Autónomas españolas.
-
 \vspace{0.2cm}
 ```{r fig17a_res2,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas, desde el inicio de la pandemia.",fig.width = 16,fig.height = 18,warning=FALSE}
 figura_ISSSA_ccaa
 
 ```
 
+\clearpage
+
+## Indicador de Suficiencia Sanitaria semanal (ISSs)
+
+El ISSs es un indicador que toma valores positivos, siendo clave superar un valor de 1 para garantizar la suficiencia del sistema. Sucesivos valores diarios por debajo de 1 implican posibles saturaciones del sistema sanitario, mientras que si el indicador se sitúa por encima de 1 evidencia mejores niveles de suficiencia. Para que el sistema sanitario esté en condiciones de estabilizarse es necesario que el ISSa mantenga una tendencia creciente y que el ISSd se sitúe de manera sostenida por encima de 1. **Desde una perspectiva nacional, el ISSd de la segunda ola ha superado esta semana el valor de 1 (ISSs = 1.01), también con una tendencia creciente en las últimas semanas.** Por comunidades autónomas, en todas ellas presenta un comportamiento similar. Una vez este indicador se estabilice por encima de 1, el número de casos resueltos semanalmente superará al de casos diagnosticados. **El actual valor de este indicador en torno a 1 indica que probablemente nos encontramos en un punto de inflexión en el devenir de la segunda ola, comenzando a partir de ahora una mejora previsible de la situación de suficiencia sanitaria del país, tanto a nivel nacional como por comunidades autónomas.**
+
+```{r tabla2, echo=FALSE, results= 'asis', warning=FALSE}
+kable(tabla_ccaa_informe_isss,row.names = F,caption = "ISS semanal por CCAA, segunda ola y pandemia.",format="latex")%>%
+ kable_styling(font_size = 9,latex_options = "hold_position")
+```
+
+```{r fig_iss2, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss2} ISS semanal, segunda ola y pandemia.",warning=FALSE}
+grid.arrange(figura_ISSSD_españa2,figura_ISSSD_españa,ncol=2, nrow =1)
+```
+
+
 ```{r figura_ISSSD_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_ISSSD_ccaa} ISS semanal por Comunidades Autónomas.",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
 figura_ISSSD_ccaa
 ```
 
-\vspace{0.2cm}
+```{r tabla3, echo=FALSE, results= 'asis', warning=FALSE}
+kable(tabla_ccaa_informe_isss,row.names = F,caption = "ISS semanal por CCAA, segunda ola y pandemia.",format="latex")%>%
+ kable_styling(font_size = 9,latex_options = "hold_position")
 
-
-
-
-
-
+```
 
 
 \clearpage
@@ -148,7 +144,7 @@ Definiciones básicas:
 - **ISS Semanal, semana $s$**
 
 $$
-ISS_d = \frac{AtendidosSemanales_s}{NuevosCasos_{s}}
+ISS_s = \frac{AtendidosSemanales_s}{NuevosCasos_{s}}
 $$
 
 
