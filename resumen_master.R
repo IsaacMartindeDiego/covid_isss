@@ -2,6 +2,7 @@
 source('auto_read.R')
 source('preprocessing.R')
 source('figures.R')
+source("tables.R")
 
 a = strsplit(as.character(Sys.Date()), "-")
 fecha_informe = paste0(a[[1]][1],a[[1]][2],a[[1]][3],sep="")
