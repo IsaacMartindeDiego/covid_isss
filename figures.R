@@ -35,7 +35,7 @@ ISSSA_españa=Spain%>%group_by(Semana)%>%arrange(Semana)%>%summarise(Rec=sum(Rec
 ISSSA_españa=ISSSA_españa%>%mutate(RecuperadosA=cumsum(Rec),CasosA=cumsum(Cas),ISSSD=Rec/Cas,ISSSA=100*RecuperadosA/CasosA)
 
 gg1=ggplot(ISSSA_españa)+geom_line(aes(x=Semana,y=ISSSA,color='red'),lwd=1.25)
-figura_ISSSA_españa=gg1+theme_minimal()+theme(legend.position = "none")+ 
+figura_ISSSA_españa=gg1+theme_minimal()+theme(legend.position = "none")+  ylim(0,100)+
   theme(axis.title.x=element_blank(),axis.title.y=element_blank(),plot.title = element_text(hjust = 0.5))+
   ggtitle("ISS acumulado")+scale_x_date(date_breaks = "months" , date_labels = "%b")
 
@@ -83,7 +83,7 @@ ISSSA_españa2=Spain2%>%group_by(Semana)%>%arrange(Semana)%>%summarise(Rec=sum(R
 ISSSA_españa2=ISSSA_españa2%>%mutate(RecuperadosA=cumsum(Rec),CasosA=cumsum(Cas),ISSSD=Rec/Cas,ISSSA=100*RecuperadosA/CasosA)
 
 gg1=ggplot(ISSSA_españa2)+geom_line(aes(x=Semana,y=ISSSA,color='red'),lwd=1.25)
-figura_ISSSA_españa2=gg1+theme_minimal()+theme(legend.position = "none")+ 
+figura_ISSSA_españa2=gg1+theme_minimal()+theme(legend.position = "none")+ ylim(0,100)+
   theme(axis.title.x=element_blank(),axis.title.y=element_blank(),plot.title = element_text(hjust = 0.5))+
   ggtitle("ISS acumulado")+scale_x_date(date_breaks = "months" , date_labels = "%b")
 

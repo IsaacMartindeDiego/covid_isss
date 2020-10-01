@@ -145,7 +145,7 @@ Los valores de ISS acumulado en España en las tres últimas semanas son:
 \begin{itemize}
 \tightlist
 \item
-  Última semana: 83.4\%
+  Última semana: 83.41\%
 \item
   Penúltima semana: 80\%
 \item
@@ -170,7 +170,8 @@ sido:
 \begin{figure}
 \centering
 \includegraphics{20201001_COVID19_DSLAB_informe_resumido_files/figure-latex/fig_iss-1.pdf}
-\caption{\label{fig:fig_iss} ISS acumulado y semanal.}
+\caption{\label{fig:fig_iss} ISS acumulado y semanal, desde el inicio de
+la pandemia.}
 \end{figure}
 
 \clearpage
@@ -184,52 +185,52 @@ para las Comunidades Autónomas españolas. \vspace{0.2cm}
 
 \begin{table}[!h]
 
-\caption{\label{tab:tabla}ISS acumulado e ISS semanal por CCAA}
+\caption{\label{tab:tabla}ISS acumulado e ISS semanal por CCAA, segunda ola y pandemia.}
 \centering
 \fontsize{9}{11}\selectfont
-\begin{tabular}[t]{l|l|r}
+\begin{tabular}[t]{l|l|r|l|r}
 \hline
-Comunidad Autónoma & ISS acumulado (\%) & ISS semanal\\
+Comunidad Autónoma & ISSA (\%) 2ª ola & ISSS 2ª ola & ISSA (\%) pandemia & ISSS pandemia\\
 \hline
-Andalucia & 82.57 & 0.91\\
+Andalucia & 82.57 & 0.91 & 87.58 & 0.90\\
 \hline
-Aragón & 85.37 & 0.90\\
+Aragón & 85.37 & 0.90 & 88.21 & 0.90\\
 \hline
-Asturias & 66.13 & 0.51\\
+Asturias & 66.13 & 0.51 & 83.69 & 0.46\\
 \hline
-Baleares & > 95 & 0.00\\
+Baleares & > 95 & 0.01 & > 95 & 0.01\\
 \hline
-C. Valenciana & 93.27 & 1.62\\
+C. Valenciana & 93.27 & 1.62 & > 95 & 1.61\\
 \hline
-Canarias & > 95 & 2.29\\
+Canarias & > 95 & 2.29 & > 95 & 2.29\\
 \hline
-Cantabria & 89.62 & 2.17\\
+Cantabria & 89.62 & 2.17 & 94.25 & 2.17\\
 \hline
-Castilla La Mancha & 73.45 & 0.94\\
+Castilla La Mancha & 73.45 & 0.94 & 86.85 & 0.88\\
 \hline
-Castilla y León & 74.34 & 0.71\\
+Castilla y León & 74.34 & 0.71 & 86.83 & 0.63\\
 \hline
-Cataluña & 94.75 & 1.89\\
+Cataluña & 94.75 & 1.89 & > 95 & 1.68\\
 \hline
-Ceuta & 86.12 & 0.99\\
+Ceuta & 86.12 & 0.99 & 92.19 & 0.99\\
 \hline
-Extremadura & 69.4 & 0.80\\
+Extremadura & 69.4 & 0.80 & 82.28 & 0.80\\
 \hline
-Galicia & 94.79 & 1.06\\
+Galicia & 94.79 & 1.06 & > 95 & 1.05\\
 \hline
-La Rioja & 88.4 & 0.95\\
+La Rioja & 88.4 & 0.95 & 94.88 & 0.95\\
 \hline
-Madrid & 76.59 & 0.78\\
+Madrid & 76.59 & 0.78 & 84.25 & 0.78\\
 \hline
-Melilla & 76.15 & 1.00\\
+Melilla & 76.15 & 1.00 & 80.7 & 1.00\\
 \hline
-Murcia & 77.02 & 1.13\\
+Murcia & 77.02 & 1.13 & 80.96 & 1.13\\
 \hline
-Navarra & 72.29 & 0.93\\
+Navarra & 72.29 & 0.93 & 82.48 & 0.93\\
 \hline
-País Vasco & 94.55 & 1.40\\
+País Vasco & 94.55 & 1.40 & > 95 & 1.40\\
 \hline
-España & 83.4 & 1.01\\
+España & 83.41 & 1.01 & 84.11 & 0.98\\
 \hline
 \end{tabular}
 \end{table}
@@ -243,7 +244,7 @@ las Comunidades Autónomas españolas.
 \centering
 \includegraphics{20201001_COVID19_DSLAB_informe_resumido_files/figure-latex/fig17a_res-1.pdf}
 \caption{\label{fig:fig17a_res} ISS acumulado en las Comunidades
-Autónomas}
+Autónomas, segunda ola}
 \end{figure}
 
 \begin{figure}
@@ -259,7 +260,7 @@ Autónomas}
 \centering
 \includegraphics{20201001_COVID19_DSLAB_informe_resumido_files/figure-latex/fig17a_res2-1.pdf}
 \caption{\label{fig:fig17a_res} ISS acumulado en las Comunidades
-Autónomas. Segunda ola.}
+Autónomas, desde el inicio de la pandemia}
 \end{figure}
 
 \clearpage
@@ -287,6 +288,55 @@ pandemia}
 \caption{\label{fig:figura_activos_ccaa} Activos por Comunidades
 Autónomas}
 \end{figure}
+
+\clearpage
+
+\hypertarget{definiciones}{%
+\subsection{Definiciones}\label{definiciones}}
+
+Definiciones básicas:
+
+\begin{itemize}
+\item
+  \(Confirmados_s\): número de diagnósticos confirmados acumulados a
+  fecha \(s\).
+\item
+  \(NuevosCasos_{s} = Confirmados_{s} - Confirmados_{s-1}\): nuevos
+  contagiados la semana \(s\).
+\item
+  \(Fallecidos_s\): número de fallecimientos acumulados a fecha \(s\).
+\item
+  \(FallecidosSemanales_s = Fallecidos_{s} - Fallecidos_{s-1}\): número
+  de fallecimientos la semana \(s\).
+\item
+  \(Recuperados_s\): número de casos recuperados acumulados a fecha
+  \(s\).
+\item
+  \(RecuperadosSemanales_{s} = Recuperados_{s} - Recuperados_{s-1}\):
+  número de recuperados en la semana \(s\).
+\item
+  \(ActivosSemanales_s = Confirmados_s - Fallecidos_s - Recuperados_s\).
+  Casos activos al final de la semana \(s\).
+\item
+  \(AtendidosSemanales_{s} = RecuperadosSemanales_s + FallecidosSemanales_s\):
+  Pacientes atendidos la semana \(s\).
+\item
+  \(Atendidos_{s} = Recuperados_s + Fallecidos_s\): Pacientes atendidos
+  acumulados a fecha \(s\).
+\item
+  \textbf{ISS acumulado a semana \(s\)}
+  \[ISS\_Acumulado_s = \frac{Atendidos_s}{Confirmados_s} \times 100\]
+  Este indicador mide el estrés acumulado del sistema. Cuanto más
+  próximo a 100, más desestresado está el sistema.
+\item
+  \textbf{ISS Semanal, semana \(s\)}
+\end{itemize}
+
+\[
+ISS_d = \frac{AtendidosSemanales_s}{NuevosCasos_{s}}
+\]
+
+\vspace{4cm}
 
 \begin{center}
 \includegraphics{cc.png}

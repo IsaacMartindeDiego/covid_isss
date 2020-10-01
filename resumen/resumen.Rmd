@@ -61,7 +61,7 @@ Los valores de ISS semanal en España en las tres últimas semanas ha sido:
 
 
 \vspace{0.2cm}
-```{r fig_iss, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss} ISS acumulado y semanal."}
+```{r fig_iss, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss} ISS acumulado y semanal, desde el inicio de la pandemia."}
 grid.arrange(figura_ISSSA_españa,figura_ISSSD_españa,ncol=2, nrow =1)
 
 ```
@@ -75,7 +75,7 @@ La siguiente tabla muestra los valores de ISS acumulado e ISS semanal para las C
 
 
 ```{r tabla, echo=FALSE, results= 'asis', warning=FALSE}
-kable(tabla_ccaa_informe,row.names = F,caption = "ISS acumulado e ISS semanal por CCAA",format="latex")%>%
+kable(tabla_ccaa_informe,row.names = F,caption = "ISS acumulado e ISS semanal por CCAA, segunda ola y pandemia.",format="latex")%>%
  kable_styling(font_size = 9,latex_options = "hold_position")
 
 ```
@@ -84,8 +84,8 @@ kable(tabla_ccaa_informe,row.names = F,caption = "ISS acumulado e ISS semanal po
 Estos gráficos representan la evolución del ISS acumulado y semanal en las Comunidades Autónomas españolas.
 
 \vspace{0.2cm}
-```{r fig17a_res,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas ",fig.width = 16,fig.height = 18,warning=FALSE}
-figura_ISSSA_ccaa
+```{r fig17a_res,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas, segunda ola ",fig.width = 16,fig.height = 18,warning=FALSE}
+figura_ISSSA_ccaa2
 
 ```
 
@@ -94,8 +94,8 @@ figura_ISSSD_ccaa
 ```
 
 \vspace{0.2cm}
-```{r fig17a_res2,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas. Segunda ola. ",fig.width = 16,fig.height = 18,warning=FALSE}
-figura_ISSSA_ccaa2
+```{r fig17a_res2,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas, desde el inicio de la pandemia ",fig.width = 16,fig.height = 18,warning=FALSE}
+figura_ISSSA_ccaa
 
 ```
 
@@ -122,8 +122,35 @@ figura_activos_españa
 figura_activos_ccaa
 ```
 
+\clearpage
+
+## Definiciones
 
 
+Definiciones básicas:
+
+- $Confirmados_s$: número de diagnósticos confirmados acumulados a fecha $s$.
+- $NuevosCasos_{s} = Confirmados_{s} - Confirmados_{s-1}$:  nuevos contagiados la semana $s$.
+- $Fallecidos_s$: número de fallecimientos acumulados a fecha $s$.
+- $FallecidosSemanales_s = Fallecidos_{s} - Fallecidos_{s-1}$:  número de fallecimientos la semana $s$.
+- $Recuperados_s$: número de casos recuperados acumulados a fecha $s$.
+- $RecuperadosSemanales_{s} = Recuperados_{s} - Recuperados_{s-1}$: número de recuperados en la semana $s$.
+- $ActivosSemanales_s = Confirmados_s - Fallecidos_s - Recuperados_s$. Casos activos al final de la semana $s$.
+- $AtendidosSemanales_{s} = RecuperadosSemanales_s + FallecidosSemanales_s$: Pacientes atendidos la semana $s$.
+- $Atendidos_{s} = Recuperados_s + Fallecidos_s$: Pacientes atendidos acumulados a fecha $s$.
+
+
+-  **ISS acumulado a semana  $s$**
+    $$ISS\_Acumulado_s = \frac{Atendidos_s}{Confirmados_s} \times 100$$
+     Este indicador mide el estrés acumulado del sistema. Cuanto más próximo a 100, más desestresado está el sistema. 
+- **ISS Semanal, semana $s$**
+
+$$
+ISS_d = \frac{AtendidosSemanales_s}{NuevosCasos_{s}}
+$$
+
+
+\vspace{4cm}
 
 \begin{center}
 \includegraphics{cc.png}

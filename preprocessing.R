@@ -28,7 +28,7 @@ for(i in 19:dim(Asturias)[1]){
 # Baleares
 Baleares = Spain %>% filter(CCAA=="Baleares") %>% arrange(Semana)
 for(i in 19:dim(Baleares)[1]){
-  Baleares$Recuperados[i]=Baleares$Activos[i-2]-Baleares$Fallecidos[i-1]
+  Baleares$Recuperados[i]=max(Baleares$Activos[i-2]-Baleares$Fallecidos[i-1],0)
   Baleares$ActivosSemanales[i]=Baleares$Casos[i]-Baleares$Fallecidos[i]-Baleares$Recuperados[i]
   Baleares$Activos[i]=max(Baleares$Activos[i-1]+Baleares$ActivosSemanales[i],0)
 }
@@ -211,7 +211,7 @@ for(i in 3:dim(Asturias)[1]){
 # Baleares
 Baleares = Spain2 %>% filter(CCAA=="Baleares") %>% arrange(Semana)
 for(i in 3:dim(Baleares)[1]){
-  Baleares$Recuperados[i]=Baleares$Activos[i-2]-Baleares$Fallecidos[i-1]
+  Baleares$Recuperados[i]=max(Baleares$Activos[i-2]-Baleares$Fallecidos[i-1],0)
   Baleares$ActivosSemanales[i]=Baleares$Casos[i]-Baleares$Fallecidos[i]-Baleares$Recuperados[i]
   Baleares$Activos[i]=max(Baleares$Activos[i-1]+Baleares$ActivosSemanales[i],0)
 }
