@@ -29,7 +29,7 @@ tabla_ccaa_informeP$ISSSA=round(tabla_ccaa_informeP$ISSSA,2)
 
 tabla_ccaa_informe=cbind(tabla_ccaa_informe,tabla_ccaa_informeP[,-1])
 ## Cambiamos nombre de las columnas a la tabla
-names(tabla_ccaa_informe)=c("Comunidad Autónoma", "ISSA (%) 2ª ola", "ISSS 2ª ola", "ISSA (%) pandemia", "ISSS pandemia")
-tabla_ccaa_informe$`ISSA (%) 2ª ola`[tabla_ccaa_informe$`ISSA (%) 2ª ola`>95]="> 95"
-tabla_ccaa_informe$`ISSA (%) pandemia`[tabla_ccaa_informe$`ISSA (%) pandemia`>95]="> 95"
+names(tabla_ccaa_informe)=c("Comunidad Autónoma", "ISSa (%) 2ª ola", "ISSs 2ª ola", "ISSa (%) pandemia", "ISSs pandemia")
+tabla_ccaa_informe$`ISSa (%) 2ª ola`[tabla_ccaa_informe$`ISSa (%) 2ª ola`>95]="> 95"
+tabla_ccaa_informe$`ISSa (%) pandemia`[tabla_ccaa_informe$`ISSa (%) pandemia`>95]="> 95"
 
