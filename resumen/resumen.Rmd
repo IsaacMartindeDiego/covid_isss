@@ -1,15 +1,17 @@
 ---
-title: "Informe del `r format(Sys.Date(), '%d de %B de %Y')`"
+title: "Informe del `r format(Sys.Date()-1, '%d de %B de %Y')`"
 mainfont: Roboto Light
 header-includes:
 - \usepackage[font=small,skip=8pt]{caption}
 - \usepackage{float}
 - \floatplacement{figure}{H}
+- \renewcommand{\contentsname}{Índice}
 output:
   pdf_document:
     includes:
       in_header: header.tex
       fig_caption: yes
+      numer_sections: true
   html_document:
     df_print: paged
 fontsize: 11pt
@@ -33,9 +35,14 @@ knitr::opts_chunk$set(fig.pos = "!H")
 \renewcommand{\figurename}{Figura}
 \renewcommand{\tablename}{Tabla}
 
-\vspace{-0.5cm}
+\tableofcontents
 
-## Informe ejecutivo
+
+\vspace{.5cm}
+
+---
+
+\vspace{.5cm}
 
 Para analizar el comportamiento de la segunda ola de la pandemia provocada por el virus SARS-CoV-2 y la enfermedad COVID-19 en España, se han diseñado dos **Indicadores de Suficiencia Sanitaria (ISS):** uno acumulado **(ISSa)** y otro semanal **(ISSs)**. Además, se lleva a cabo una estimación del número de **casos activos** desde que se inició la pandemia. 
 
@@ -45,11 +52,12 @@ El ISSa está definido en términos de porcentaje. Desde esa perspectiva, valore
 
 Del ISSa se presentan dos estimaciones: 
 
-- Una primera estimación de su valor a lo largo de la segunda ola, es decir, desde la primera semana de julio hasta la actualidad. En esa primera semana de julio el ISSa de la primera ola alcanzó sus valores máximos, cercanos al 100%, dándose por controlada la pandemia en ese momento. **En la actualidad, el ISSa de España correspondiente a la segunda ola toma un valor del 83.40%** (ver tabla 1), con una tendencia creciente, ya que hace 14 días su valor era del 75.13% (ver figura 1, izquierda). **Este comportamiento creciente indica que la segunda ola se está controlando moderadamente.**
+- Una primera estimación de su valor desde el inicio de la segunda ola -datada a principios de julio- hasta la actualidad. **En estos momentos, el ISSa de España correspondiente a la segunda fase de la oleada y toma un valor del 83.40%** (ver tabla 1), con una tendencia creciente ya que hace 14 días su valor era del 75.13% (ver figura 1, izquierda). **Este comportamiento indica que la segunda ola se está controlando moderadamente.**
 
-- Una segunda estimación de su valor a lo largo de toda la pandemia, es decir, tomando para su cálculo el periodo completo que abarca desde el mes de marzo hasta la actualidad (ver figura 1, derecha). Su valor es del 84.11%. Esta estimación permite ver el avance completo de la pandemia, pero no refleja la realidad de la segunda ola, ya que los datos de la primera ola incrementan el valor del indicador.  
+- Una segunda estimación de su valor a lo largo de toda la pandemia, es decir, tomando para su cálculo el periodo completo que abarca desde el mes de marzo hasta la actualidad (ver figura 1, derecha). Su valor es del 84.11%. Esta estimación permite ver el avance completo de la pandemia, pero no refleja la realidad de la segunda ola, ya que los datos de la primera ola incrementan el valor del indicador. 
     
-También se calcula el ISSa para cada comunidad autónoma. Se puede comprobar en la figura 2 que el ISSa de la segunda ola es creciente en la mayor parte de las comunidades autónomas. Los valores más altos del ISSa se alcanzan en Islas Baleares y Canarias (superior al 95%). Comunidad Valenciana, Cataluña, Galicia y País Vasco están cerca de alcanzar ese valor. Por tanto, todas estas comunidades están cerca de alcanzar valores de control de la segunda ola. Los valores más bajos del ISSa en la segunda ola se dan en Asturias (ISSa = 66.13) y Extremadura (ISSa = 69.4). 
+También se calcula el ISSa para cada comunidad autónoma. Se puede comprobar en la figura 2 que el ISSa de la segunda oleada es creciente en la mayor parte de las autonomías. Los valores más elevados del ISSa se alcanzan en Islas Baleares y Canarias (superiores al 95%). Comunidad Valenciana, Cataluña, Galicia y País Vasco están cerca de alcanzar ese valor. Por tanto, todas ellas están cerca de alcanzar valores de control de la segunda ola. Los valores más bajos del ISSa en la segunda ola se dan en Asturias (ISSa = 66.13) y Extremadura (ISSa = 69.4). 
+
 
 
 ```{r tabla, echo=FALSE, results= 'asis', warning=FALSE}
@@ -78,7 +86,7 @@ figura_ISSSA_ccaa
 
 ## Indicador de Suficiencia Sanitaria semanal (ISSs)
 
-El ISSs es un indicador que toma valores positivos, siendo clave superar un valor de 1 para garantizar la suficiencia del sistema. Sucesivos valores diarios por debajo de 1 implican posibles saturaciones del sistema sanitario, mientras que si el indicador se sitúa por encima de 1 evidencia mejores niveles de suficiencia. Para que el sistema sanitario esté en condiciones de estabilizarse es necesario que el ISSa mantenga una tendencia creciente y que el ISSd se sitúe de manera sostenida por encima de 1. **Desde una perspectiva nacional, el ISSd de la segunda ola ha superado esta semana el valor de 1 (ISSs = 1.01), también con una tendencia creciente en las últimas semanas.** Por comunidades autónomas, en todas ellas presenta un comportamiento similar. Una vez este indicador se estabilice por encima de 1, el número de casos resueltos semanalmente superará al de casos diagnosticados. **El actual valor de este indicador en torno a 1 indica que probablemente nos encontramos en un punto de inflexión en el devenir de la segunda ola, comenzando a partir de ahora una mejora previsible de la situación de suficiencia sanitaria del país, tanto a nivel nacional como por comunidades autónomas.**
+El ISSs es un indicador que toma valores positivos, siendo clave superar un valor de 1 para garantizar la suficiencia del sistema. Sucesivos valores semanales por debajo de 1 implican posibles saturaciones del sistema sanitario, mientras que si el indicador se sitúa por encima de 1 evidencia mejores niveles de suficiencia. Para que el sistema sanitario esté en condiciones de estabilizarse es necesario que el ISSa mantenga una tendencia creciente y que el ISSs se sitúe de manera sostenida por encima de 1. **Desde una perspectiva nacional, el ISSs de la segunda ola ha superado esta semana el valor de 1 (ISSs = 1.01, ver tabla 2), también con una sostenida tendencia creciente a lo largo del mes de septiembre** (ver figura 4). Desagregando por comunidades autónomas, todas ellas presentan un comportamiento similar (ver figura 5). En el momento este indicador se estabilice por encima de 1, el número de casos resueltos semanalmente superará al de casos diagnosticados. **El actual valor del ISSs en torno a 1 indica que probablemente nos encontramos en un punto de inflexión en el devenir de la segunda ola, comenzando a partir de ahora una mejora previsible de la situación de suficiencia sanitaria tanto a nivel nacional como autonómico.**
 
 ```{r tabla2, echo=FALSE, results= 'asis', warning=FALSE}
 kable(tabla_ccaa_informe_isss,row.names = F,caption = "ISS semanal por CCAA, segunda ola y pandemia.",format="latex")%>%
@@ -105,18 +113,18 @@ kable(tabla_ccaa_informe_isss,row.names = F,caption = "ISS semanal por CCAA, seg
 
 ## Estimación de casos activos
 
-Las **figuras 6 y 7** presentan gráficos que resumen muy bien la evolución de la pandemia en España. Se trata del **gráfico de la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **España presenta ya una clara ralentización en el crecimiento del número de casos activos de la segunda ola. A excepción de Extremadura, Madrid y Navarra, el resto de comunidades autónomas presentan escenarios de decrecimiento o de una ralentización del crecimiento de los casos activos y, en estas tres comunidades autónomas, el escenario de ralentización es previsible que se alcance en breve (este escenario se alcanza cuando el ISSs se sitúa en torno al valor de 1). **
+Las **figuras 6 y 7** muestran gráficos que resumen de forma muy ajustada la evolución de la pandemia en España. En concreto, presentan **la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **España presenta ya una clara ralentización en el crecimiento del número de casos activos de la segunda ola. A excepción de Extremadura, Madrid y Navarra, el resto de comunidades autónomas muestran escenarios de decrecimiento o de una ralentización del crecimiento de los casos activos y, en estas tres comunidades autónomas, el escenario de ralentización es previsible que se alcance en breve. Recordamos que este escenario se alcanza cuando el ISSs se sitúa en torno al valor de 1.**
 
 
 \vspace{0.2cm}
 
-```{r fig1,echo=FALSE,fig.cap="\\label{fig:fig17a_res} Activos en España desde el inicio de la pandemia.",warning=FALSE}
+```{r fig1,echo=FALSE,fig.cap="\\label{fig:fig17a_res} Estimación de casos activos en España desde el inicio de la pandemia.",warning=FALSE}
 figura_activos_españa
 
 ```
 
 
-```{r figura_activos_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_activos_ccaa} Activos por Comunidades Autónomas.",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
+```{r figura_activos_ccaa,echo=FALSE,fig.cap="\\label{fig:figura_activos_ccaa}  Estimación de casos activos por Comunidades Autónomas.",fig.pos="H",fig.width = 16,fig.height = 18,warning=FALSE}
 figura_activos_ccaa
 ```
 
