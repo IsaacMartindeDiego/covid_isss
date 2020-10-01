@@ -1,0 +1,72 @@
+---
+title: "Suficiencia Sanitaria y COVID-19 "
+
+subtitle: |
+  Informe actualizado a `r format(Sys.time(), '%H:%M del %d de %B de %Y')`
+author: 'Elaborado por los grupos de investigación DSLAB y methaodos.org de la Universidad Rey Juan Carlos, en colaboración con la Academia Joven de España.'
+# date: ""
+output:
+  html_document:
+    # code_folding: hide
+    css: styles.css
+    df_print: paged
+    fig_caption: yes
+    # fig_height: 5
+    # fig_width: 9
+    includes:
+      in_header: "header.html"
+    number_sections: yes
+    theme: flatly
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+#   pdf_document:
+#     toc: yes
+#     toc_depth: '2'
+# link-citations: yes
+
+
+---
+<style>
+#TOC::before {
+  content: "";
+  display: block;
+  height: 150px;
+  margin: 2em 10px 20px 10px;
+  background-image: url("https://raw.githubusercontent.com/URJCDSLab/website/gh-pages/research/projects/covid19/reports/logos_v.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+body {
+text-align: justify}
+
+</style>
+
+
+# Resumen ejecutivo  {-}
+
+Se presentan dos **Indicadores de Suficiencia Sanitaria (ISS)**: uno acumulado **(ISSa)** y otro diario **(ISSd)**. El ISSa está definido en términos de porcentaje. Desde esa perspectiva, valores altos del ISSa (cercanos a 100) indicarán que el sistema sanitario está en disposición de absorber el flujo de diagnósticos confirmados de coronavirus para que puedan ser tratados según los protocolos establecidos. Por el contrario, valores bajos del ISSa (cercanos a 0) sintomatizarán limitaciones que impedirán la correcta gestión del flujo de casos diagnosticados. China empezó a desescalar sus medidas de confinamiento cuando su ISSa alcanzó un valor del 93%. 
+
+<br>
+<a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200717_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe resumido consolidado a fecha 20 de julio de 2020</a>
+<br> 
+
+<br>
+<hr>
+Informe elaborado por los grupos de investigación DSLAB y methaodos.org de la Universidad Rey Juan Carlos, en colaboración con la Academia Joven de España.
+
+
+
+
+
+<br>
+<center>
+![](logos_h.png){width=100%}
+</center>
+
+<br><br>
+<DIV align="left">
+ <P><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+ <P>Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+</DIV>
