@@ -1,4 +1,4 @@
 \contentsline {subsection}{Indicador de Suficiencia Sanitaria acumulado (ISSa)}{1}{section*.2}%
 \contentsline {subsection}{Indicador de Suficiencia Sanitaria semanal (ISSs)}{6}{section*.7}%
-\contentsline {subsection}{Estimación de casos activos}{10}{section*.12}%
-\contentsline {subsection}{Definiciones}{12}{section*.15}%
+\contentsline {subsection}{Estimación de casos activos}{9}{section*.11}%
+\contentsline {subsection}{Definiciones}{11}{section*.14}%

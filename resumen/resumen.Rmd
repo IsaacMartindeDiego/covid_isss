@@ -99,12 +99,6 @@ grid.arrange(figura_ISSSD_españa2,figura_ISSSD_españa,ncol=2, nrow =1)
 figura_ISSSD_ccaa
 ```
 
-```{r tabla3, echo=FALSE, results= 'asis', warning=FALSE}
-kable(tabla_ccaa_informe_isss,row.names = F,caption = "ISS semanal por CCAA, segunda ola y pandemia.",format="latex")%>%
- kable_styling(font_size = 9,latex_options = "hold_position")
-
-```
-
 
 \clearpage
 
