@@ -2,8 +2,8 @@
 title: "Suficiencia Sanitaria y COVID-19 "
 
 subtitle: |
-  Informe actualizado a `r format(Sys.time(), '%H:%M del %d de %B de %Y')`
-author: 'Elaborado por los grupos de investigación DSLAB y methaodos.org de la Universidad Rey Juan Carlos, en colaboración con la Academia Joven de España.'
+  Informe actualizado a `r format(Sys.time(), '%d de %B de %Y')`
+# author: 'Elaborado por los grupos de investigación DSLAB y methaodos.org de la Universidad Rey Juan Carlos, en colaboración con la Academia Joven de España.'
 # date: ""
 output:
   html_document:
@@ -44,13 +44,45 @@ text-align: justify}
 </style>
 
 
-# Resumen ejecutivo  {-}
+Los grupos de investigación methaodos.org y DSLAB en colaboración con la Academia Joven de España han realizado informes sobre la situación y evolución COVID-19 tanto en España como en los países más afectados por la pandemia. Estos informes tienen como punto central el Índice de Suficiencia Sanitaria que estudia la capacidad de un sistema para afrontar una pandemia como la actual. Hasta 29 de junio se han realizado <a href="https://github.com/URJCDSLab/website/tree/gh-pages/research/projects/covid19/informes_ejecutivos" target="_blank">informes diarios</a> y <a href="https://github.com/URJCDSLab/website/tree/gh-pages/research/projects/covid19/informes_semanales" target="_blank">semanales</a>.
 
-Se presentan dos **Indicadores de Suficiencia Sanitaria (ISS)**: uno acumulado **(ISSa)** y otro diario **(ISSd)**. El ISSa está definido en términos de porcentaje. Desde esa perspectiva, valores altos del ISSa (cercanos a 100) indicarán que el sistema sanitario está en disposición de absorber el flujo de diagnósticos confirmados de coronavirus para que puedan ser tratados según los protocolos establecidos. Por el contrario, valores bajos del ISSa (cercanos a 0) sintomatizarán limitaciones que impedirán la correcta gestión del flujo de casos diagnosticados. China empezó a desescalar sus medidas de confinamiento cuando su ISSa alcanzó un valor del 93%. 
+A partir de octubre se realizarán informes mensuales con información semanal: 
+<br>
+<a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20201002_COVID19_DSLAB_informe_ejecutivo.pdf" target="_blank">Informe ejecutivo a fecha 02 de octubre de 2020</a>
+<br> 
+
+<!-- <br> -->
+<!-- <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200717_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe resumido consolidado a fecha 20 de julio de 2020</a> -->
+<!-- <br>  -->
+
+<!-- <br> -->
+<!-- <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200629_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe semanal a fecha 29 de junio de 2020</a> -->
+<!-- <br>  -->
+
+<!-- <br> -->
+<!-- <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200622_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe semanal a fecha 22 de junio de 2020</a> -->
+<!-- <br>  -->
+
+<!-- <br> -->
+<!-- <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200615_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe semanal a fecha 15 de junio de 2020</a> -->
+<!-- <br>  -->
+
+
+<!-- <br> -->
+<!-- <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200608_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe semanal a fecha 08 de junio de 2020</a> -->
+<!-- <br>  -->
+
+<!-- <br> -->
+<!-- <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200601_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe semanal a fecha 01 de junio de 2020</a> -->
+<!-- <br>  -->
+
+<!-- <br> -->
+<!-- <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200525_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe semanal a fecha 25 de mayo de 2020</a> -->
+<!-- <br>  -->
 
 <br>
-<a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20200717_COVID19_DSLAB_informe_semanal.pdf" target="_blank">Informe resumido consolidado a fecha 20 de julio de 2020</a>
-<br> 
+
+
 
 <br>
 <hr>
@@ -60,9 +92,11 @@ Informe elaborado por los grupos de investigación DSLAB y methaodos.org de la U
 
 
 
+
+
 <br>
 <center>
-![](logos_h.png){width=100%}
+![](logos_h.png){width=80%}
 </center>
 
 <br><br>
