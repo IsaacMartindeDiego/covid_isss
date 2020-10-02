@@ -59,7 +59,7 @@ Estos informes se llevan realizando desde el inicio de la pandemia para poder ha
 
 Desde el 25 de mayo hasta el 20 de julio, esta web ofreció <a href="https://github.com/URJCDSLab/website/tree/gh-pages/research/projects/covid19/informes_semanales" target="_blank">resúmenes semanales</a> de la situación COVID-19 en España.
 
-Con la intención de tener una perspectiva global, desde el 20 de abril al 20 de julio, también se realizaron semanalmente  <a href="https://github.com/URJCDSLab/website/tree/gh-pages/research/projects/covid19/summaries" target="_blank">informes</a> con una comparativa de la evolución de la pandemia provocada por el COVID-19 en los países más afectados del mundo. 
+Con la intención de tener una perspectiva global, desde el 20 de abril al 17 de julio, también se realizaron semanalmente  <a href="https://github.com/URJCDSLab/website/tree/gh-pages/research/projects/covid19/summaries" target="_blank">informes</a> con una comparativa de la evolución de la pandemia provocada por el COVID-19 en los países más afectados del mundo. 
 
 
 Para más información sobre la definición e interpretación de los índices presentados en estos informes, consultar el  <a href="https://www.methaodos.org/revista-methaodos/index.php/methaodos/article/view/349" target="_blank">artículo de referencia</a> publicado en la revista methaodos.
