@@ -1,5 +1,5 @@
 ---
-title: "Informe del `r format(Sys.Date()-1, '%d de %B de %Y')`"
+title: "Informe del `r format(Sys.Date(), '%d de %B de %Y')`"
 mainfont: Roboto Light
 header-includes:
 - \usepackage[font=small,skip=8pt]{caption}
@@ -11,11 +11,7 @@ output:
     includes:
       in_header: header.tex
       fig_caption: yes
-      numer_sections: true
-  html_document:
-    df_print: paged
 fontsize: 11pt
-always_allow_html: true
 ---
 ```{r setup, cache=FALSE, include=FALSE}
 library(knitr)
@@ -34,6 +30,7 @@ knitr::opts_chunk$set(fig.pos = "!H")
 ```
 \renewcommand{\figurename}{Figura}
 \renewcommand{\tablename}{Tabla}
+
 
 \tableofcontents
 
@@ -82,7 +79,7 @@ figura_ISSSA_ccaa
 
 ```
 
-\clearpage
+\newpage
 
 ## Indicador de Suficiencia Sanitaria semanal (ISSs)
 
@@ -128,7 +125,7 @@ figura_activos_españa
 figura_activos_ccaa
 ```
 
-\clearpage
+\newpage
 
 ## Definiciones
 
