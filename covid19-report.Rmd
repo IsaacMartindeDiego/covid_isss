@@ -51,6 +51,8 @@ Desde octubre se realizan informes mensuales con los datos agregados semanalment
 <br><br>
 <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20201002_COVID19_DSLAB_informe_ejecutivo.pdf" target="_blank">Informe ejecutivo a fecha 02 de octubre de 2020</a>
 <br><br> 
+<a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20201105_COVID19_DSLAB_informe_ejecutivo.pdf" target="_blank">Informe ejecutivo a fecha 05 de noviembre de 2020</a>
+<br><br> 
 
 Los datos utilizados en este estudio se extraen de la web <a href="https://systems.jhu.edu/" target="_blank">Centro de Ciencia e Ingeniería de Sistemas (CSSE)</a> de la Universidad Johns Hopkins. En particular, los datos quedan recogidos en su <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">repositorio de Github</a>. En particular para España, los datos que recoge el CSSE de la Universidad Johns Hopkins son los que proporciona el Gobierno de España en su 
 <a href="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/situacionActual.htm" target="_blank">página web oficial</a>.
