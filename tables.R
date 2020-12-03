@@ -6,6 +6,7 @@ max_fecha_ccaa=max(Spain2$Semana)
 tabla_ccaa_informe=Spain2%>%filter(Semana==max_fecha_ccaa)%>%select(CCAA,ISSSA,ISSSD)%>%arrange(CCAA)
 tabla_ccaa_informe=as.data.frame(tabla_ccaa_informe)
 
+
 ## Seleccionamos datos de España de esa fecha
 ult_datos_Spain=cbind(CCAA="España",ISSSA_españa2%>%filter(Semana==max_fecha_ccaa)%>%select(ISSSA,ISSSD))
 
