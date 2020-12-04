@@ -82,6 +82,7 @@ figura_ISSSA_ccaa
 ```
 
 \newpage
+\setcounter{page}{6}
 
 ## Indicador de Suficiencia Sanitaria semanal (ISSs)
 
@@ -106,6 +107,9 @@ figura_ISSSD_ccaa
 
 \clearpage
 
+\setcounter{page}{9}
+
+
 ## Estimación de casos activos
 
 Las **figuras 6 y 7** muestran gráficos que resumen de forma muy ajustada la evolución de la pandemia en España. En concreto, presentan **la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **Todas la comunidades autónomas muestran escenarios de decrecimiento o estabilización a la baja del número de casos activos. Esta situación, de mantenerse en el tiempo, implicará una mejora de la suficiencia sanitaria y, en consecuencia, del control de la pandemia.**
@@ -124,6 +128,7 @@ figura_activos_ccaa
 ```
 
 \newpage
+\setcounter{page}{11}
 
 ## Definiciones
 
