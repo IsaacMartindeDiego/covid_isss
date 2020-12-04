@@ -49,6 +49,9 @@ Los grupos de investigación <a href="https://www.methaodos.org/" target="_blank
 
 Desde octubre se realizan informes mensuales con los datos agregados semanalmente que proporciona el Gobierno de España: 
 <br><br> 
+<a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20201204_COVID19_DSLAB_informe_ejecutivo.pdf" target="_blank">Informe ejecutivo a fecha 04 de diciembre de 2020</a>
+
+
 <a href="https://dslab-website.s3.eu-central-1.amazonaws.com/20201105_COVID19_DSLAB_informe_ejecutivo.pdf" target="_blank">Informe ejecutivo a fecha 05 de noviembre de 2020</a>
 
 
