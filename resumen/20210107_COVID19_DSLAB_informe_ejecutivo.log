@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.14)  4 DEC 2020 11:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.14)  7 JAN 2021 21:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**20201204_COVID19_DSLAB_informe_ejecutivo.tex
-(./20201204_COVID19_DSLAB_informe_ejecutivo.tex
+**20210107_COVID19_DSLAB_informe_ejecutivo.tex
+(./20210107_COVID19_DSLAB_informe_ejecutivo.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base
 /article.cls
@@ -394,7 +394,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count274
 \l__pdf_internal_box=\box49
-) (./20201204_COVID19_DSLAB_informe_ejecutivo.aux
+) (./20210107_COVID19_DSLAB_informe_ejecutivo.aux
 
 LaTeX Warning: Label `fig:fig17a_res' multiply defined.
 
@@ -402,7 +402,7 @@ LaTeX Warning: Label `fig:fig17a_res' multiply defined.
 LaTeX Warning: Label `fig:fig17a_res' multiply defined.
 
 )
-\openout1 = `20201204_COVID19_DSLAB_informe_ejecutivo.aux'.
+\openout1 = `20210107_COVID19_DSLAB_informe_ejecutivo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
 LaTeX Font Info:    ... okay on input line 110.
@@ -565,12 +565,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 111
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (./20201204_COVID19_DSLAB_informe_ejecutivo.toc
+) (./20210107_COVID19_DSLAB_informe_ejecutivo.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 1.
 )
 \tf@toc=\write3
-\openout3 = `20201204_COVID19_DSLAB_informe_ejecutivo.toc'.
+\openout3 = `20210107_COVID19_DSLAB_informe_ejecutivo.toc'.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 51.
@@ -581,22 +581,22 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./methaodos.png> <./dslab.
 png> <./aje.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 181.
+(Font)              <9> on input line 183.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 181.
-<20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pdf, id
+(Font)              <5> on input line 183.
+<20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pdf, id
 =31, 458.71375pt x 315.1775pt>
-File: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pd
+File: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pd
 f Graphic file (type pdf)
-<use 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pdf
+<use 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pdf
 >
-Package pdftex.def Info: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-
-latex/fig_iss3-1.pdf  used on input line 230.
+Package pdftex.def Info: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-
+latex/fig_iss3-1.pdf  used on input line 232.
 (pdftex.def)             Requested size: 458.73363pt x 315.19115pt.
 <./DSLab_logo_2.png, id=32, 189.8292pt x 187.4202pt>
 File: ./DSLab_logo_2.png Graphic file (type png)
 <use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 233.
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 235.
 (pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -605,136 +605,136 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [2 <./DSLab_logo_2.png>]
-<20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.pdf, 
-id=41, 1146.2825pt x 1285.80376pt>
-File: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.
+<20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.pdf, 
+id=41, 1145.27875pt x 1285.80376pt>
+File: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.
 pdf Graphic file (type pdf)
-<use 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.p
+<use 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.p
 df>
-Package pdftex.def Info: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-
-latex/fig17a_res-1.pdf  used on input line 238.
-(pdftex.def)             Requested size: 469.7515pt x 526.9279pt.
-File: ./DSLab_logo_2.png Graphic file (type png)
-<use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 242.
-(pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
-[3 <./20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pd
-f>]
-<20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1.pdf,
- id=54, 1145.27875pt x 1285.80376pt>
-File: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1
-.pdf Graphic file (type pdf)
-<use 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1.
-pdf>
-Package pdftex.def Info: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-
-latex/fig17a_res2-1.pdf  used on input line 247.
+Package pdftex.def Info: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-
+latex/fig17a_res-1.pdf  used on input line 240.
 (pdftex.def)             Requested size: 469.75955pt x 527.39877pt.
 File: ./DSLab_logo_2.png Graphic file (type png)
 <use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 251.
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 244.
 (pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
-[4 <./20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.
+[3 <./20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pd
+f>]
+<20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1.pdf,
+ id=54, 1145.27875pt x 1285.80376pt>
+File: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1
+.pdf Graphic file (type pdf)
+<use 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1.
+pdf>
+Package pdftex.def Info: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-
+latex/fig17a_res2-1.pdf  used on input line 249.
+(pdftex.def)             Requested size: 469.75955pt x 527.39877pt.
+File: ./DSLab_logo_2.png Graphic file (type png)
+<use ./DSLab_logo_2.png>
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 253.
+(pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
+[4 <./20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.
 pdf>]
 File: ./DSLab_logo_2.png Graphic file (type png)
 <use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 252.
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 254.
 (pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
-[5 <./20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1
+[5 <./20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1
 .pdf>]
-<20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pdf, id
+<20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pdf, id
 =79, 459.7175pt x 315.1775pt>
-File: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pd
+File: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pd
 f Graphic file (type pdf)
-<use 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pdf
+<use 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pdf
 >
-Package pdftex.def Info: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-
-latex/fig_iss2-1.pdf  used on input line 335.
+Package pdftex.def Info: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-
+latex/fig_iss2-1.pdf  used on input line 332.
 (pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
 File: ./DSLab_logo_2.png Graphic file (type png)
 <use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 338.
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 335.
 (pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
 [6]
-<20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_ccaa-
+<20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_ccaa-
 1.pdf, id=86, 1145.27875pt x 1285.80376pt>
-File: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_
+File: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_
 ccaa-1.pdf Graphic file (type pdf)
-<use 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_c
+<use 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_c
 caa-1.pdf>
-Package pdftex.def Info: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-
-latex/figura_ISSSD_ccaa-1.pdf  used on input line 341.
+Package pdftex.def Info: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-
+latex/figura_ISSSD_ccaa-1.pdf  used on input line 338.
 (pdftex.def)             Requested size: 469.75955pt x 527.39877pt.
 File: ./DSLab_logo_2.png Graphic file (type png)
 <use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 345.
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 342.
 (pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
-[7 <./20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pd
+[7 <./20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pd
 f>]
 File: ./DSLab_logo_2.png Graphic file (type png)
 <use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 346.
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 343.
 (pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
-[8 <./20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_
+[8 <./20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_
 ccaa-1.pdf>]
-<20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf, id=112
+<20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf, id=112
 , 459.7175pt x 315.1775pt>
-File: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf Gr
+File: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf Gr
 aphic file (type pdf)
-<use 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf>
-Package pdftex.def Info: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-
-latex/fig1-1.pdf  used on input line 367.
+<use 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf>
+Package pdftex.def Info: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-
+latex/fig1-1.pdf  used on input line 366.
 (pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
-<20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activos_cca
+<20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activos_cca
 a-1.pdf, id=113, 1146.2825pt x 1285.80376pt>
-File: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activo
+File: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activo
 s_ccaa-1.pdf Graphic file (type pdf)
-<use 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activos
+<use 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activos
 _ccaa-1.pdf>
-Package pdftex.def Info: 20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-
-latex/figura_activos_ccaa-1.pdf  used on input line 374.
+Package pdftex.def Info: 20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-
+latex/figura_activos_ccaa-1.pdf  used on input line 373.
 (pdftex.def)             Requested size: 469.7515pt x 526.9279pt.
+File: ./DSLab_logo_2.png Graphic file (type png)
+<use ./DSLab_logo_2.png>
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 377.
+(pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
+[9
+
+ <./20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf>]
 File: ./DSLab_logo_2.png Graphic file (type png)
 <use ./DSLab_logo_2.png>
 Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 378.
 (pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
-[9
-
- <./20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf>]
-File: ./DSLab_logo_2.png Graphic file (type png)
-<use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 379.
-(pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
-[10 <./20201204_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activ
+[10 <./20210107_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activ
 os_ccaa-1.pdf>]
 <cc.png, id=139, 88.33pt x 31.11626pt>
 File: cc.png Graphic file (type png)
 <use cc.png>
-Package pdftex.def Info: cc.png  used on input line 430.
+Package pdftex.def Info: cc.png  used on input line 429.
 (pdftex.def)             Requested size: 88.33112pt x 31.11664pt.
 
 AED: lastpage setting LastPage
 File: ./DSLab_logo_2.png Graphic file (type png)
 <use ./DSLab_logo_2.png>
-Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 443.
+Package pdftex.def Info: ./DSLab_logo_2.png  used on input line 442.
 (pdftex.def)             Requested size: 14.22498pt x 14.04446pt.
 [11 <./cc.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 443.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 443.
-(./20201204_COVID19_DSLAB_informe_ejecutivo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 443.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 443.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 442.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 442.
+(./20210107_COVID19_DSLAB_informe_ejecutivo.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 442.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 442.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14390 strings out of 481239
- 216788 string characters out of 5920377
- 503745 words of memory out of 5000000
+ 14384 strings out of 481239
+ 216722 string characters out of 5920377
+ 502717 words of memory out of 5000000
  29317 multiletter control sequences out of 15000+600000
- 595984 words of font info for 98 fonts, out of 8000000 for 9000
+ 595735 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,45p,839b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,15n,45p,839b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
@@ -745,8 +745,8 @@ ype1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 20201204_COVID19_DSLAB_informe_ejecutivo.pdf (11 pages, 35710
-4 bytes).
+Output written on 20210107_COVID19_DSLAB_informe_ejecutivo.pdf (11 pages, 36040
+3 bytes).
 PDF statistics:
  214 PDF objects out of 1000 (max. 8388607)
  158 compressed objects within 2 object streams
