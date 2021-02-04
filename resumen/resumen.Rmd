@@ -109,7 +109,7 @@ figura_ISSSD_ccaa
 
 ## Estimación de casos activos
 
-Las **figuras 6 y 7** muestran gráficos que resumen de forma muy ajustada la evolución de la pandemia en España. En concreto, presentan **la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **La mayoría las comunidades autónomas muestran escenarios crecientes después del periodo navideño en lo relativo al número de casos activos. Está tendencia se está moderando e incluso invirtiendo en algunas comunidades autónomas, como por ejemplo Aragón, Cataluña, Canarias, Extremadura y Murcia. Esta inflexión en la tendencia creciente, de confirmarse en el tiempo, unida a la aplicación de medidas preventivas (como por ejemplo la vacunación), deberían implicar una mejora de la suficiencia sanitaria y, en consecuencia, del control de la pandemia.**
+Las **figuras 6 y 7** muestran tendencias que resumen de forma muy ajustada la evolución de la pandemia en España. En concreto, presentan **la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **La mayoría las comunidades autónomas muestran escenarios crecientes después del periodo navideño en lo relativo al número de casos activos. Está tendencia se está moderando e incluso invirtiendo en algunas comunidades autónomas, como por ejemplo Aragón, Cataluña, Canarias, Extremadura y Murcia. Esta inflexión en la tendencia creciente, de confirmarse en el tiempo, unida a la aplicación de medidas preventivas (como por ejemplo la vacunación), deberían implicar una mejora de la suficiencia sanitaria y, en consecuencia, del control de la pandemia.**
 
 
 \vspace{0.2cm}
