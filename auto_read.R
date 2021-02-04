@@ -22,3 +22,4 @@ Spain2 = ISS_SEMANAL %>%
   mutate(ActivosSemanales=Casos-Fallecidos-Recuperados,Activos=cumsum(ActivosSemanales))
 
 Spain2=as.data.frame(Spain2)
+

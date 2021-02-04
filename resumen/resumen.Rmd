@@ -1,5 +1,5 @@
 ---
-title: "Informe del `r format(Sys.Date(), '%d de %B de %Y')`"
+title: "Informe del `r format(Sys.Date()-1, '%d de %B de %Y')`"
 mainfont: Roboto Light
 header-includes:
 - \usepackage[font=small,skip=8pt]{caption}
@@ -49,12 +49,11 @@ El ISSa está definido en términos de porcentaje. Desde esa perspectiva, valore
 
 Del ISSa se presentan dos estimaciones:
 
-- Una primera estimación de su valor desde el inicio de la segunda ola -datada a principios de julio- hasta la actualidad. **En estos momentos, el ISSa de España correspondiente a la segunda ola de la pandemia se mantiene en un valor superior al 95%** (ver tabla 1), con una tendencia oscilante en torno a ese valor (ver figura 1, izquierda). **Este comportamiento del valor del indicador es coherente con las medidas, mayoritariamente reactivas, que se están tomando a lo largo de la segunda ola.** Entendemos por **medidas reactivas** aquellas que se toman para dar respuesta a valores extremos de determinados indicadores (como por ejemplo la tasa de incidencia a 14 días). El denominador común de estas medidas es que se relajan una vez los valores de los indicadores dejan de ser extremos.
+- Una primera estimación de su valor desde el inicio de la segunda ola -datada a principios de julio- hasta la actualidad. **En estos momentos, el ISSa de España correspondiente a la segunda ola de la pandemia ha descendido hasta el 86.4%** (ver tabla 1), con una tendencia decreciente que se está moderando (ver figura 1, izquierda), en lo que puede significar un cambio de tendencia. **Este comportamiento del valor del indicador es coherente con las medidas, mayoritariamente reactivas, que se están tomando a lo largo de la segunda ola, y especialmente las tomadas después del periodo navideño.** Entendemos por **medidas reactivas** aquellas que se toman para dar respuesta a valores extremos de determinados indicadores (como por ejemplo la tasa de incidencia a 14 días). El denominador común de estas medidas es que se relajan una vez los valores de los indicadores dejan de ser extremos.
 
-- Una segunda estimación de su valor a lo largo de toda la pandemia, es decir, tomando para su cálculo el periodo completo que abarca desde el mes de marzo hasta la actualidad (ver figura 1, derecha). Su valor también es superior al 95%. Esta estimación permite ver el avance completo de la pandemia.
+- Una segunda estimación de su valor a lo largo de toda la pandemia, es decir, tomando para su cálculo el periodo completo que abarca desde el mes de marzo hasta la actualidad (ver figura 1, derecha). Su valor es del 86.25%. Esta estimación permite ver el avance completo de la pandemia.
 
-    
-También se calcula el ISSa para cada comunidad autónoma. Se puede comprobar en la figura 2 que el ISSa de la segunda oleada tiene también un comportamiento oscilante en la mayor parte de las autonomías. Los únicos valores por debajo del 95% son los de Islas Baleares (ISSa = 89.63%), Comunidad Valenciana (ISSa = 86.11%) y Galicia (ISSa = 93.55%), aunque también con una tendencia claramente oscilante.
+También se calcula el ISSa para cada comunidad autónoma. Se puede comprobar en la figura 2 que el ISSa de la segunda oleada tiene también un comportamiento decreciente que se está moderando en la mayor parte de las autonomías. De hecho, Aragón, Canarias y Cataluña se mantienen en valores del indicador por encima del 95%, y otras, como por ejemplo Extremadura y Murcia, presentan ya un cambio de tendencia. Andalucía (ISSa = 79.33%), Comunidad Valenciana (ISSa = 73.88%) y Galicia (ISSa = 77.98%) son las que presentan los valores más bajos del ISSa, aunque también con una clara moderación de la tendencia decreciente.
 
 
 
@@ -85,7 +84,7 @@ figura_ISSSA_ccaa
 
 ## Indicador de Suficiencia Sanitaria semanal (ISSs)
 
-El ISSs es un indicador que toma valores positivos, siendo clave superar un valor de 1 para garantizar la suficiencia del sistema. Sucesivos valores semanales por debajo de 1 implican posibles saturaciones del sistema sanitario, mientras que si el indicador se sitúa por encima de 1 evidencia mejores niveles de suficiencia. Para que el sistema sanitario esté en condiciones de estabilizarse es necesario que el ISSa mantenga una tendencia creciente y que el ISSs se sitúe de manera sostenida por encima de 1. **Desde una perspectiva nacional, el ISSs de la segunda ola ha vuelto a superar el valor de 1 (ISSs = 1.27, ver tabla 2), manteniendo una tendencia oscilante en torno a 1 desde el mes de septiembre (ver figura 4).** Desagregando por comunidades autónomas, todas ellas presentan un comportamiento similar (ver figura 5). En el momento este indicador se estabilice por encima de 1, el número de casos resueltos semanalmente superará al de casos diagnosticados. **Los valores oscilantes del ISSs, tanto a nivel nacional como autonómico, son coherentes con las oscilaciones del indicador acumulado, el ISSa.**
+El ISSs es un indicador que toma valores positivos, siendo clave superar un valor de 1 para garantizar la suficiencia del sistema. Sucesivos valores semanales por debajo de 1 implican posibles saturaciones del sistema sanitario, mientras que si el indicador se sitúa por encima de 1 evidencia mejores niveles de suficiencia. Para que el sistema sanitario esté en condiciones de estabilizarse es necesario que el ISSa mantenga una tendencia creciente y que el ISSs se sitúe de manera sostenida por encima de 1. **Desde una perspectiva nacional, el ISSs de la segunda ola ha vuelto a bajar del valor de 1 (ISSs = 0.78, ver tabla 2), manteniendo una tendencia oscilante en torno a 1 desde el mes de septiembre (ver figura 4).** Desagregando por comunidades autónomas, todas ellas presentan un comportamiento similar (ver figura 5). En el momento este indicador se estabilice por encima de 1, el número de casos resueltos semanalmente superará al de casos diagnosticados. **Los valores oscilantes del ISSs, tanto a nivel nacional como autonómico, son coherentes con las oscilaciones del indicador acumulado, el ISSa.**
 
 
 ```{r tabla2, echo=FALSE, results= 'asis', warning=FALSE}
@@ -110,7 +109,7 @@ figura_ISSSD_ccaa
 
 ## Estimación de casos activos
 
-Las **figuras 6 y 7** muestran gráficos que resumen de forma muy ajustada la evolución de la pandemia en España. En concreto, presentan **la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **Todas las comunidades autónomas muestran escenarios oscilantes en lo que respecta al número de casos activos. Esta situación, de mantenerse en el tiempo, unida a la aplicación de medidas preventivas (como por ejemplo la vacunación), deberían implicar una mejora de la suficiencia sanitaria y, en consecuencia, del control de la pandemia.**
+Las **figuras 6 y 7** muestran gráficos que resumen de forma muy ajustada la evolución de la pandemia en España. En concreto, presentan **la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **La mayoría las comunidades autónomas muestran escenarios crecientes después del periodo navideño en lo relativo al número de casos activos. Está tendencia se está moderando e incluso invirtiendo en algunas comunidades autónomas, como por ejemplo Aragón, Cataluña, Canarias, Extremadura y Murcia. Esta inflexión en la tendencia creciente, de confirmarse en el tiempo, unida a la aplicación de medidas preventivas (como por ejemplo la vacunación), deberían implicar una mejora de la suficiencia sanitaria y, en consecuencia, del control de la pandemia.**
 
 
 \vspace{0.2cm}
