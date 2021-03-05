@@ -179,6 +179,8 @@ Spain[Spain$Casos==0 & (Spain$Fallecidos+Spain$Recuperados)>0,]$ISSSD=Spain[Spai
 
 Spain=Spain%>%group_by(CCAA)%>%arrange(Semana)%>%mutate(ResueltosAcumulados=cumsum(Recuperados)+cumsum(Fallecidos),CasosAcumulados=cumsum(Casos),ISSSA=100*ResueltosAcumulados/CasosAcumulados)
 
+Spain=Spain%>%mutate(ISSSA=ifelse(ISSSA<100,ISSSA,100))
+
 
 # Segunda OLA
 

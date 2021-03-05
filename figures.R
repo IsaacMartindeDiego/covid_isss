@@ -33,6 +33,8 @@ figura_ISSSA_ccaa=gg1+facet_wrap(~CCAA,ncol=3,scales="free")+theme_minimal()+the
 
 ISSSA_españa=Spain%>%group_by(Semana)%>%arrange(Semana)%>%summarise(Rec=sum(Recuperados),Cas=sum(Casos))
 ISSSA_españa=ISSSA_españa%>%mutate(RecuperadosA=cumsum(Rec),CasosA=cumsum(Cas),ISSSD=Rec/Cas,ISSSA=100*RecuperadosA/CasosA)
+ISSSA_españa=ISSSA_españa%>%mutate(ISSSA=ifelse(ISSSA<100,ISSSA,100))
+
 
 gg1=ggplot(ISSSA_españa)+geom_line(aes(x=Semana,y=ISSSA,color='red'),lwd=1.25)
 figura_ISSSA_españa=gg1+theme_minimal()+theme(legend.position = "none")+  ylim(0,100)+
