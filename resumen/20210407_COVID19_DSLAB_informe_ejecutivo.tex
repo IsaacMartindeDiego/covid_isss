@@ -1,0 +1,459 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Roboto Light}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Informe del 07 de abril de 2021},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+
+
+\topmargin=-0.45in
+\evensidemargin=-1in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1}
+ \pagestyle{fancy}
+ \fancyhead[LO,LE]{\thetitle}
+ \fancyhead[RO,RE]{\includegraphics[width=0.5cm]{./DSLab_logo_2.png}}
+ \fancyfoot[LO,LE]{DSLab, methaodos.org, Academia Joven de España \thedate}
+ \cfoot{}
+ \fancyfoot[RE,RO]{Página\ \thepage\ de\ \protect\pageref*{LastPage}}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \vspace{-2.5cm}
+  \includegraphics[width=3.2cm]{./methaodos.png}
+  \hspace{3cm}
+  \includegraphics[width=3.5cm]{./dslab.png}
+  \hspace{3cm}
+  \includegraphics[width=3cm]{./aje.png}\\ 
+\vspace{1cm}
+\textbf{Suficiencia Sanitaria y COVID-19}\\
+}
+\posttitle{\end{center}}
+\usepackage[font=small,skip=8pt]{caption}
+\usepackage{float}
+\floatplacement{figure}{H}
+\renewcommand{\contentsname}{Índice}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+\title{Informe del 07 de abril de 2021}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+
+\tableofcontents
+
+\vspace{.5cm}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\vspace{.5cm}
+
+Para analizar el comportamiento de la segunda ola de la pandemia
+provocada por el virus SARS-CoV-2 y la enfermedad COVID-19 en España, se
+han diseñado dos \textbf{Indicadores de Suficiencia Sanitaria (ISS):}
+uno acumulado \textbf{(ISSa)} y otro semanal \textbf{(ISSs)}. Además, se
+lleva a cabo una estimación del número de \textbf{casos activos} desde
+que se inició la pandemia.
+
+\hypertarget{indicador-de-suficiencia-sanitaria-acumulado-issa}{%
+\subsection{Indicador de Suficiencia Sanitaria acumulado
+(ISSa)}\label{indicador-de-suficiencia-sanitaria-acumulado-issa}}
+
+El ISSa está definido en términos de porcentaje. Desde esa perspectiva,
+valores altos del ISSa (cercanos a 100) indicarán que el sistema
+sanitario está en disposición de absorber el flujo de diagnósticos
+confirmados de coronavirus para que puedan ser tratados según los
+protocolos establecidos. Por el contrario, valores bajos del ISSa
+(cercanos a 0) sintomatizarán limitaciones que impedirán la correcta
+gestión del flujo de casos diagnosticados. Tomando como referencia un
+análisis de los valores del ISSa de la primera ola, se deben alcanzar
+valores de este indicador por encima del 95\% para poder dar por
+controlada la situación de pandemia desde un punto de vista de
+suficiencia sanitaria.
+
+Del ISSa se presentan dos estimaciones:
+
+\begin{itemize}
+\item
+  Una primera estimación de su valor desde el inicio de la segunda ola
+  -datada a principios de julio- hasta la actualidad. \textbf{En estos
+  momentos, el ISSa de España correspondiente a la segunda ola de la
+  pandemia ha vuelto a superar el valor del 95\%} (ver tabla 1), con una
+  tendencia claramente creciente (ver figura 1, izquierda). Se confirma,
+  por tanto, el cambio de tendencia anunciado hace cuatro semanas.
+  \textbf{Este comportamiento del valor del indicador es coherente con
+  la consistencia temporal de las medidas, mayoritariamente reactivas,
+  que se están tomando a lo largo de la segunda ola, y especialmente las
+  tomadas después del periodo navideño.} Entendemos por \textbf{medidas
+  reactivas} aquellas que se toman para dar respuesta a valores extremos
+  de determinados indicadores (como por ejemplo la tasa de incidencia a
+  14 días). El denominador común de estas medidas es que se relajan una
+  vez los valores de los indicadores dejan de ser extremos.
+\item
+  Una segunda estimación de su valor a lo largo de toda la pandemia, es
+  decir, tomando para su cálculo el periodo completo que abarca desde el
+  mes de marzo hasta la actualidad (ver figura 1, derecha). Su valor
+  supera también el 95\%. Esta estimación permite ver el avance completo
+  de la pandemia.
+\end{itemize}
+
+También se calcula el ISSa para cada comunidad autónoma. Se puede
+comprobar en la figura 2 que el ISSa de la segunda oleada tiene también
+un comportamiento creciente en todas las autonomías desde hace cuatro
+semanas. De hecho, en todas las comunidades autónomas el indicador toma
+valores por encima del 95\%.
+
+\begin{table}[!h]
+
+\caption{\label{tab:tabla}ISS acumulado por CCAA, segunda ola y pandemia.}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{l|l|l}
+\hline
+Comunidad Autónoma & ISSa (\%) 2ª ola & ISSa (\%) pandemia\\
+\hline
+Andalucia & > 95 & > 95\\
+\hline
+Aragón & > 95 & > 95\\
+\hline
+Asturias & > 95 & > 95\\
+\hline
+Baleares & > 95 & > 95\\
+\hline
+C. Valenciana & > 95 & > 95\\
+\hline
+Canarias & > 95 & > 95\\
+\hline
+Cantabria & > 95 & > 95\\
+\hline
+Castilla La Mancha & > 95 & > 95\\
+\hline
+Castilla y León & > 95 & > 95\\
+\hline
+Cataluña & > 95 & > 95\\
+\hline
+Ceuta & > 95 & > 95\\
+\hline
+Extremadura & > 95 & > 95\\
+\hline
+Galicia & > 95 & > 95\\
+\hline
+La Rioja & > 95 & > 95\\
+\hline
+Madrid & > 95 & > 95\\
+\hline
+Melilla & > 95 & > 95\\
+\hline
+Murcia & > 95 & > 95\\
+\hline
+Navarra & > 95 & > 95\\
+\hline
+País Vasco & > 95 & > 95\\
+\hline
+España & > 95 & > 95\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics{20210407_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss3-1.pdf}
+\caption{\label{fig:fig_iss3} ISS acumulado, segunda ola y pandemia.}
+\end{figure}
+
+\vspace{0.2cm}
+
+\begin{figure}
+\centering
+\includegraphics{20210407_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res-1.pdf}
+\caption{\label{fig:fig17a_res} ISS acumulado en las Comunidades
+Autónomas, segunda ola.}
+\end{figure}
+
+\vspace{0.2cm}
+
+\begin{figure}
+\centering
+\includegraphics{20210407_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig17a_res2-1.pdf}
+\caption{\label{fig:fig17a_res} ISS acumulado en las Comunidades
+Autónomas, desde el inicio de la pandemia.}
+\end{figure}
+
+\newpage
+\setcounter{page}{6}
+
+\hypertarget{indicador-de-suficiencia-sanitaria-semanal-isss}{%
+\subsection{Indicador de Suficiencia Sanitaria semanal
+(ISSs)}\label{indicador-de-suficiencia-sanitaria-semanal-isss}}
+
+El ISSs es un indicador que toma valores positivos, siendo clave superar
+un valor de 1 para garantizar la suficiencia del sistema. Sucesivos
+valores semanales por debajo de 1 implican posibles saturaciones del
+sistema sanitario, mientras que si el indicador se sitúa por encima de 1
+evidencia mejores niveles de suficiencia. Para que el sistema sanitario
+esté en condiciones de estabilizarse es necesario que el ISSa mantenga
+una tendencia creciente y que el ISSs se sitúe de manera sostenida por
+encima de 1. \textbf{Desde una perspectiva nacional, el ISSs de la
+segunda ola ha vuelto a bajar del valor de 1 (ISSs = 0.28, ver tabla 2),
+continuando con la tendencia oscilante en torno a 1 desde el mes de
+septiembre (ver figura 4).} Desagregando por comunidades autónomas,
+todas ellas presentan un comportamiento similar (ver figura 5). Sin
+embargo, durante el último mes el ISSs ha alcanzado valores superiores a
+3 durante dos semanas consecutivas, por lo que es normal que su valor se
+modere circunstancialmente. \textbf{Esta situación es posiblemente el
+anuncio de una moderación en el crecimiento del indicador acumulado
+ISSa.}
+
+\begin{table}[!h]
+
+\caption{\label{tab:tabla2}ISS semanal por CCAA, segunda ola y pandemia.}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{l|r|r}
+\hline
+Comunidad Autónoma & ISSs 2ª ola & ISSs pandemia\\
+\hline
+Andalucia & 1.86 & 1.86\\
+\hline
+Aragón & 2.06 & 2.06\\
+\hline
+Asturias & 2.36 & 2.36\\
+\hline
+Baleares & 1.62 & 1.62\\
+\hline
+C. Valenciana & 4.67 & 4.67\\
+\hline
+Canarias & 1.35 & 1.35\\
+\hline
+Cantabria & 1.90 & 1.90\\
+\hline
+Castilla La Mancha & 1.76 & 1.76\\
+\hline
+Castilla y León & 1.99 & 1.99\\
+\hline
+Cataluña & 1.73 & 1.73\\
+\hline
+Ceuta & 2.45 & 2.45\\
+\hline
+Extremadura & 0.00 & 0.00\\
+\hline
+Galicia & 2.41 & 2.41\\
+\hline
+La Rioja & 11.01 & 11.01\\
+\hline
+Madrid & 1.83 & 1.83\\
+\hline
+Melilla & 1.72 & 1.72\\
+\hline
+Murcia & 1.52 & 1.52\\
+\hline
+Navarra & 0.92 & 0.92\\
+\hline
+País Vasco & 1.57 & 1.57\\
+\hline
+España & 1.86 & 1.86\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics{20210407_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig_iss2-1.pdf}
+\caption{\label{fig:fig_iss2} ISS semanal, segunda ola y pandemia.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{20210407_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_ISSSD_ccaa-1.pdf}
+\caption{\label{fig:figura_ISSSD_ccaa} ISS semanal por Comunidades
+Autónomas.}
+\end{figure}
+
+\clearpage
+
+\setcounter{page}{9}
+
+\hypertarget{estimaciuxf3n-de-casos-activos}{%
+\subsection{Estimación de casos
+activos}\label{estimaciuxf3n-de-casos-activos}}
+
+Las \textbf{figuras 6 y 7} muestran tendencias que resumen de forma muy
+ajustada la evolución de la pandemia en España. En concreto, presentan
+\textbf{la estimación del número de casos diagnosticados que permanecen
+activos cada semana}, tanto a nivel nacional como por comunidades
+autónomas. \textbf{Todas las comunidades autónomas muestran escenarios
+decrecientes en el último mes. El comportamiento creciente de la última
+semana se debe a correcciones de la serie histórica de datos. Esta
+situación de decrecimiento del número de casos activos es coherente con
+el mantenimiento en el tiempo de las medidas reactivas y con la
+implantación de medidas preventivas que van surtiendo efecto (como por
+ejemplo la vacunación).}
+
+\vspace{0.2cm}
+
+\begin{figure}
+\centering
+\includegraphics{20210407_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/fig1-1.pdf}
+\caption{\label{fig:fig17a_res} Estimación de casos activos en España
+desde el inicio de la pandemia.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{20210407_COVID19_DSLAB_informe_ejecutivo_files/figure-latex/figura_activos_ccaa-1.pdf}
+\caption{\label{fig:figura_activos_ccaa} Estimación de casos activos por
+Comunidades Autónomas.}
+\end{figure}
+
+\newpage
+\setcounter{page}{11}
+
+\hypertarget{definiciones}{%
+\subsection{Definiciones}\label{definiciones}}
+
+Definiciones básicas:
+
+\begin{itemize}
+\item
+  \(Confirmados_s\): número de diagnósticos confirmados acumulados a
+  fecha \(s\).
+\item
+  \(NuevosCasos_{s} = Confirmados_{s} - Confirmados_{s-1}\): nuevos
+  contagiados la semana \(s\).
+\item
+  \(Fallecidos_s\): número de fallecimientos acumulados a fecha \(s\).
+\item
+  \(FallecidosSemanales_s = Fallecidos_{s} - Fallecidos_{s-1}\): número
+  de fallecimientos la semana \(s\).
+\item
+  \(Recuperados_s\): número de casos recuperados acumulados a fecha
+  \(s\).
+\item
+  \(RecuperadosSemanales_{s} = Recuperados_{s} - Recuperados_{s-1}\):
+  número de recuperados en la semana \(s\).
+\item
+  \(ActivosSemanales_s = Confirmados_s - Fallecidos_s - Recuperados_s\).
+  Casos activos al final de la semana \(s\).
+\item
+  \(AtendidosSemanales_{s} = RecuperadosSemanales_s + FallecidosSemanales_s\):
+  Pacientes atendidos la semana \(s\).
+\item
+  \(Atendidos_{s} = Recuperados_s + Fallecidos_s\): Pacientes atendidos
+  acumulados a fecha \(s\).
+\item
+  \textbf{ISS acumulado a semana \(s\)}
+  \[ISS\_Acumulado_s = \frac{Atendidos_s}{Confirmados_s} \times 100\]
+  Este indicador mide el estrés acumulado del sistema. Cuanto más
+  próximo a 100, más desestresado está el sistema.
+\item
+  \textbf{ISS Semanal, semana \(s\)}
+\end{itemize}
+
+\[
+ISS_s = \frac{AtendidosSemanales_s}{NuevosCasos_{s}}
+\]
+
+\vspace{4cm}
+
+\begin{center}
+\includegraphics{cc.png}
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{center}
+Esta obra está bajo una licencia de Creative Commons 
+\end{center}
+
+\begin{center}
+Reconocimiento-CompartirIgual 4.0 Internacional.
+\end{center}
+
+\end{document}
