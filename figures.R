@@ -88,12 +88,12 @@ ISSSA_españa2[ISSSA_españa2$ISSSA>100,]$ISSSA=100
 gg1=ggplot(ISSSA_españa2)+geom_line(aes(x=Semana,y=ISSSA,color='red'),lwd=1.25)
 figura_ISSSA_españa2=gg1+theme_minimal()+theme(legend.position = "none")+ ylim(0,100)+
   theme(axis.title.x=element_blank(),axis.title.y=element_blank(),plot.title = element_text(hjust = 0.5))+
-  ggtitle("ISS acumulado (segunda ola)")+scale_x_date(date_breaks = "months" , date_labels = "%b")
+  ggtitle("ISS acumulado (desde julio 2020)")+scale_x_date(date_breaks = "months" , date_labels = "%b")
 
 #ISSSD España
 # Figura correspondiente a ISS semanal 
 gg1=ggplot(ISSSA_españa2)+geom_line(aes(x=Semana,y=ISSSD,color='red'),lwd=1.25)+scale_y_continuous(trans='log10')
 figura_ISSSD_españa2=gg1+theme_minimal()+theme(legend.position = "none")+ 
   theme(axis.title.x=element_blank(),axis.title.y=element_blank(),plot.title = element_text(hjust = 0.5))+
-  ggtitle("ISS semanal (segunda ola)")+scale_x_date(date_breaks = "months" , date_labels = "%b")+geom_hline(yintercept=1)
+  ggtitle("ISS semanal (desde julio 2020)")+scale_x_date(date_breaks = "months" , date_labels = "%b")+geom_hline(yintercept=1)
 

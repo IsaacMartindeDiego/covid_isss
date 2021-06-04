@@ -41,7 +41,7 @@ knitr::opts_chunk$set(fig.pos = "!H")
 
 \vspace{.5cm}
 
-Para analizar el comportamiento de la segunda ola de la pandemia provocada por el virus SARS-CoV-2 y la enfermedad COVID-19 en España, se han diseñado dos **Indicadores de Suficiencia Sanitaria (ISS):** uno acumulado **(ISSa)** y otro semanal **(ISSs)**. Además, se lleva a cabo una estimación del número de **casos activos** desde que se inició la pandemia. 
+Para analizar el comportamiento de la pandemia provocada por el virus SARS-CoV-2 y la enfermedad COVID-19 en España, se han diseñado dos **Indicadores de Suficiencia Sanitaria (ISS):** uno acumulado **(ISSa)** y otro semanal **(ISSs)**. Además, se lleva a cabo una estimación del número de **casos activos** desde que se inició la pandemia. 
 
 ## Indicador de Suficiencia Sanitaria acumulado (ISSa)
 
@@ -49,26 +49,25 @@ El ISSa está definido en términos de porcentaje. Desde esa perspectiva, valore
 
 Del ISSa se presentan dos estimaciones:
 
-- Una primera estimación de su valor desde el inicio de la segunda ola -datada a principios de julio- hasta la actualidad. **En estos momentos, el ISSa de España correspondiente a la segunda ola de la pandemia se mantiene por encima del valor del 95%** (ver tabla 1), con una tendencia estable por encima de ese valor (ver figura 1, izquierda). **Este comportamiento del valor del indicador es coherente con la consistencia temporal de las medidas, mayoritariamente reactivas, que se están tomando a lo largo de la segunda ola, y especialmente las tomadas después del periodo navideño y durante el periodo correspondiente a la Semana Santa. Entendemos por
-medidas reactivas** aquellas que se toman para dar respuesta a valores extremos de determinados indicadores (como por ejemplo la tasa de incidencia a 14 días). El denominador común de estas medidas es que se relajan una vez los valores de los indicadores dejan de ser extremos.
+- Una primera estimación de su valor desde julio de 2020 hasta la actualidad (que se corresponde con las denominadas segunda y tercera olas). **El ISSa de España correspondiente a este periodo de la pandemia se mantiene por encima del valor del 95%** (actualmente ISSa = 98.26%, ver tabla 1) desde hace cuatro meses, con una tendencia creciente por encima de ese valor (ver figura 1, izquierda). **Este comportamiento del valor del indicador es coherente con la consistencia temporal de las medidas, mayoritariamente reactivas, que se están tomando a lo largo de esta etapa, y especialmente las tomadas desde el mes de enero hasta la actualidad.** Entendemos por **medidas reactivas** aquellas que se toman para dar respuesta a valores extremos de determinados indicadores (como por ejemplo la tasa de incidencia a 14 días). El denominador común de estas medidas es que se relajan una vez los valores de los indicadores dejan de ser extremos.
 
-- Una segunda estimación de su valor a lo largo de toda la pandemia, es decir, tomando para su cálculo el periodo completo que abarca desde el mes de marzo hasta la actualidad (ver figura 1, derecha). Su valor supera también el 95%. Esta estimación permite ver el avance completo de la pandemia.
+- Una segunda estimación de su valor a lo largo de toda la pandemia, es decir, tomando para su cálculo el periodo completo que abarca desde el mes de marzo de 2020 hasta la actualidad (ver figura 1, derecha). Su valor supera también el 95% (actualmente ISSa = 97.26%, ver tabla 1) desde hace más de tres meses. Esta estimación permite ver el avance completo de la pandemia.
 
-También se calcula el ISSa para cada comunidad autónoma. Se puede comprobar en la figura 2 que el ISSa de la segunda oleada tiene también un comportamiento estable en todas las autonomías desde hace dos meses. De hecho, en todas las comunidades autónomas el indicador toma valores por encima del 95%. Se observa un ligero decrecimiento en Canarias, Cataluña, Extremadura, Melilla, Navarra y País Vasco, que entra dentro de los cambios esperables en un escenario de estabilidad, pero que debe ser monitorizado por si supusiera el inicio de un cambio de tendencia.
+También se calcula el ISSa para cada comunidad autónoma. Se puede comprobar en la figura 2 que **el ISSa del periodo julio 2020-junio 2021 (segunda y tercera olas) tiene también un comportamiento creciente en todas las autonomías desde hace cuatro meses.** De hecho, en todas las comunidades autónomas el indicador toma valores por encima del 95%. 
 
 
 ```{r tabla, echo=FALSE, results= 'asis', warning=FALSE}
-kable(tabla_ccaa_informe_issa,row.names = F,caption = "ISS acumulado por CCAA, segunda ola y pandemia.",format="latex")%>%
+kable(tabla_ccaa_informe_issa,row.names = F,caption = "ISS acumulado por CCAA, desde julio 2020 y pandemia.",format="latex")%>%
  kable_styling(font_size = 9,latex_options = "hold_position")
 ```
 
 
-```{r fig_iss3, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss3} ISS acumulado, segunda ola y pandemia.",warning=FALSE}
+```{r fig_iss3, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss3} ISS acumulado, desde julio 2020 y pandemia.",warning=FALSE}
 grid.arrange(figura_ISSSA_españa2,figura_ISSSA_españa,ncol=2, nrow =1)
 ```
 
 \vspace{0.2cm}
-```{r fig17a_res,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas, segunda ola.",fig.width = 16,fig.height = 18,warning=FALSE}
+```{r fig17a_res,echo=FALSE,fig.cap="\\label{fig:fig17a_res} ISS acumulado en las Comunidades Autónomas, desde julio 2020.",fig.width = 16,fig.height = 18,warning=FALSE}
 figura_ISSSA_ccaa2
 
 ```
@@ -84,15 +83,15 @@ figura_ISSSA_ccaa
 
 ## Indicador de Suficiencia Sanitaria semanal (ISSs)
 
-El ISSs es un indicador que toma valores positivos, siendo clave superar un valor de 1 para garantizar la suficiencia del sistema. Sucesivos valores semanales por debajo de 1 implican posibles saturaciones del sistema sanitario, mientras que si el indicador se sitúa por encima de 1 evidencia mejores niveles de suficiencia. Para que el sistema sanitario esté en condiciones de estabilizarse es necesario que el ISSa mantenga una tendencia creciente y que el ISSs se sitúe de manera sostenida por encima de 1. **Desde una perspectiva nacional, el ISSs de la segunda ola ha oscilado en las últimas semanas en torno al valor de 1 (actualmente ISSs = 0.86, ver tabla 2), continuando con la tendencia oscilante en torno a 1 que presenta desde el mes de septiembre (ver figura 4).** Desagregando por comunidades autónomas, todas ellas presentan un comportamiento similar (ver figura 5). Esta senda oscilante en torno a 1 es coherente con **la moderación en el crecimiento del indicador acumulado ISSa y su estabilización. **
+El ISSs es un indicador que toma valores positivos, siendo clave superar un valor de 1 para garantizar la suficiencia del sistema. Sucesivos valores semanales por debajo de 1 implican posibles saturaciones del sistema sanitario, mientras que si el indicador se sitúa por encima de 1 evidencia mejores niveles de suficiencia. Para que el sistema sanitario esté en condiciones de estabilizarse es necesario que el ISSa mantenga una tendencia creciente y que el ISSs se sitúe de manera sostenida por encima de 1. **Desde una perspectiva nacional, el ISSs se ha mantenido en los últimos dos meses por encima del valor de 1 (actualmente ISSs = 1.06, ver tabla 2), evidenciando esta situación una clara mejora de la suficiencia sanitaria (ver figura 4).** Desagregando por comunidades autónomas, todas ellas presentan un comportamiento similar (ver figura 5). Estos valores continuados por encima de 1 son coherentes con la tendencia creciente por encima del 95% del indicador acumulado ISSa. 
 
 
 ```{r tabla2, echo=FALSE, results= 'asis', warning=FALSE}
-kable(tabla_ccaa_informe_isss,row.names = F,caption = "ISS semanal por CCAA, segunda ola y pandemia.",format="latex")%>%
+kable(tabla_ccaa_informe_isss,row.names = F,caption = "ISS semanal por CCAA, desde julio 2020 y pandemia.",format="latex")%>%
  kable_styling(font_size = 9,latex_options = "hold_position")
 ```
 
-```{r fig_iss2, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss2} ISS semanal, segunda ola y pandemia.",warning=FALSE}
+```{r fig_iss2, echo=FALSE, warning=FALSE,fig.cap="\\label{fig:fig_iss2} ISS semanal, desde julio 2020 y pandemia.",warning=FALSE}
 grid.arrange(figura_ISSSD_españa2,figura_ISSSD_españa,ncol=2, nrow =1)
 ```
 
@@ -109,7 +108,7 @@ figura_ISSSD_ccaa
 
 ## Estimación de casos activos
 
-Las **figuras 6 y 7** muestran tendencias que resumen de forma muy ajustada la evolución de la pandemia en España. En concreto, presentan **la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **Todas las comunidades autónomas han frenado el decrecimiento de casos activos, y muestran escenarios de aparente estabilidad en el último mes. Esta situación de estabilidad (sobre todo, de no crecimiento significativo) del número de casos activos es coherente con el mantenimiento en el tiempo de las medidas reactivas y con la implantación y efecto de medidas preventivas (como por ejemplo la vacunación).**
+Las **figuras 6 y 7** muestran tendencias que resumen de forma muy ajustada la evolución de la pandemia en España. En concreto, presentan **la estimación del número de casos diagnosticados que permanecen activos cada semana**, tanto a nivel nacional como por comunidades autónomas. **Todas las comunidades autónomas han vuelto a la senda del decrecimiento de casos activos. Esta situación es coherente con el mantenimiento en el tiempo de las medidas reactivas y con el efecto de las medidas preventivas (como por ejemplo la vacunación).**
 
 \vspace{0.2cm}
 
